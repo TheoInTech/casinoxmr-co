@@ -1,0 +1,38 @@
+.bl-sidenav {
+    & {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    > .main-container {
+        & {
+            width: 100%;
+        }
+
+        > .logo {
+            max-width: 150px;
+            margin-left: 25px;
+        }
+
+        > .nav-list {
+            & {
+                margin: 25px;
+                font-size: 20px;
+                text-align: left;
+            }
+
+            > .item {
+                display: block;
+                margin: 10px 0px;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.cm-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 180px;
+  margin-top: 0;
+  background-color: $black;
+  height: 50px;
+  color: $white;
+  z-index: 999;
+
+  a {
+    color: $white;
+    margin: 10px;
+
+    &:hover {
+      color: $gray-light;
+      text-decoration: none;
+    }    
+
+    @media #{$phone} { margin-left: 0; }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 50px;
+
+    li {
+      padding: 4px 0px;
+      margin: 0;
+      display: inline;
+    }
+  }
+
+  .footer-logo {
+    height: 20px;
+  }
+
+}

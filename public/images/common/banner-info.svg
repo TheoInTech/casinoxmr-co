@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>DAE138CD-D28D-4CD4-9A16-F79F87485105</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-17.9%" y="-14.3%" width="135.7%" height="135.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0150746225   0 0 0 0 0.239939526   0 0 0 0 0.479963861  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-banner" transform="translate(-382.000000, -42.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="banner">
+                <g id="Group-16" transform="translate(388.000000, 40.000000)">
+                    <g id="img_banner_info" filter="url(#filter-1)" transform="translate(0.000000, 6.000000)">
+                        <path d="M27.9787541,0 C12.5257705,0 0,12.5241967 0,27.9770492 C0,43.4333115 12.5257705,55.9563279 27.9787541,55.9563279 C43.4305574,55.9563279 55.9563279,43.4333115 55.9563279,27.9770492 C55.9563279,12.5241967 43.4304262,0 27.9787541,0 Z M27.9780984,13.0478689 C29.9181639,13.0478689 31.4910164,14.6208525 31.4910164,16.5607869 C31.4910164,18.5007213 29.9175082,20.0731803 27.9780984,20.0731803 C26.0386885,20.0731803 24.4651803,18.5001967 24.4651803,16.5607869 C24.4651803,14.6208525 26.0381639,13.0478689 27.9780984,13.0478689 Z M34.1255082,42.9089836 L21.8308197,42.9089836 L21.8308197,37.639082 L24.4651803,37.639082 L24.4651803,27.1003279 L21.8308197,27.1003279 L21.8308197,21.8308197 L31.4916721,21.8308197 L31.4916721,27.1001967 L31.4916721,37.6389508 L34.1260328,37.6389508 L34.1260328,42.9089836 L34.1255082,42.9088525 L34.1255082,42.9089836 Z" id="Shape"></path>
+                        <polygon id="Shape" points="42.7455738 51.7310164 55.0229508 55.0201967 51.7332459 42.7433443"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

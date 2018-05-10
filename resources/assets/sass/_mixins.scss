@@ -1,0 +1,19 @@
+@mixin btn-size($height, $width, $size, $color, $bg) {
+  & {
+    height: $height;
+    max-width: $width;
+    font-size: $size;
+    color: $color;
+    background-color: $bg;
+    transition: all 0.33s $animation-type;
+  }
+
+  &:hover, &:active, &:focus {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    color: darken($color, 5%);
+    background-color: darken($bg, 5%);
+  }
+}
+

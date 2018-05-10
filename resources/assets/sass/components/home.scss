@@ -1,0 +1,245 @@
+.home-splash {
+  & {
+    background: url('/images/home/bg-home.svg') no-repeat center bottom;
+    background-size: cover;
+    color: $black;
+    display: inline-block;
+    height: 65vh;
+    width: 100%;
+    position: relative;
+    padding: 50px 200px;
+    border: none;
+    min-height: 350px;
+
+    @media #{$phone} { height: 145vh; padding: 100px 20px 0px; }
+  }
+
+  .home-left {
+    margin-left: auto;
+
+    .head {
+      font-size: 29px;
+      margin: 20px 0px;
+    }
+
+    .body {
+      font-size: 21px;
+      margin: 20px 0px;
+    }
+  }
+
+  .home-right {
+    margin-top: 80px;
+    margin-right: auto;
+
+    > .dollar-sign {
+      color: $gray-light;
+      font-size: 100px;
+      font-weight: 700;
+      font-style: italic;
+      margin-right: 10px;
+    }
+
+    > .value-list {
+      
+      > .value-item {
+        background: $orange;
+        box-shadow: 5px 5px 0px $orange-darker;
+        border-radius: 3px;
+        padding: 0px 10px;
+        margin: 0px 5px;
+        font-size: 80px;
+        font-weight: 800;
+        font-family: $body-font;
+        color: $white;
+      }
+    }
+
+    > .note-text {
+      font-weight: 600;
+      font-size: 14px;
+      color: $black;
+      margin-top: -10px;
+    }
+
+    @media #{$phone} { margin-top: 30px; }
+  }
+
+  .logo {
+    max-width: 400px;
+    margin: 30px 0px;
+  }
+}
+
+.section {
+
+  &.-address {
+    height: 33vh;
+    color: $white;
+    background: $navy-blue;
+    text-align: center;
+    position: relative;
+    padding: 20px 200px 50px;
+    min-height: 210px;
+    margin-top: -20px;
+
+    .head {
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .mymonero {
+      color: $orange;
+      font-weight: 200;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+    }
+
+    .cm-form {
+      width: 600px;
+      @media #{$phone} { height: 120px; margin: auto; }
+
+      > .input-group {
+        margin: auto;
+
+        .cm-input {
+          height: 60px;
+        }
+
+        .cm-btn {
+          height: 60px; 
+          width: 200px;
+        }  
+      }
+    }
+  }
+
+  &.-instruction {
+    height: 108vh;
+    color: $black;
+    text-align: center;
+    padding: 40px 200px;
+    background-color: $white;
+  }
+
+  > .main-container {
+
+    > .header {
+        & { margin-bottom: 20px; }
+
+        > .body {
+          max-width: 300px;
+          margin: auto;
+
+          &.-card {
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+        }
+    }
+  }
+
+}
+
+.content {
+  > .content-item {
+    & { padding: 20px; }
+
+    > .head {
+      font-size: 24px;
+    }
+  }
+}
+
+.modal {
+  .modal-content {
+    padding: 50px;
+  }
+
+  .modal-header {
+    border: none;
+
+    > .modal-title {
+      font-size: 40px;
+      color: $gray-lighter;
+      font-family: $head-font;
+    }
+
+    > .close {
+      font-size: 50px;
+      font-weight: 200;
+      color: $black;
+      opacity: 0.9;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .section {
+    & {
+      padding: 0px;
+    }
+    &.-instruction {
+      min-height: 700px;
+    }
+    &.-statistics {
+      min-height: 1000px;
+    }
+    &.-getstarted {
+      min-height: 900px;
+    }
+  }
+}
+
+@media #{$phone} {
+  .home-splash {
+    > .logo.-main {
+      margin-top: 20px;
+      max-width: 250px;
+    }
+
+    > .subhead {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+
+    > .bl-form {
+      & {
+        max-width: 280px;
+      }
+      .bl-input {
+        font-size: 12px;
+      }
+      .content {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .section {
+    & {
+      padding: 0px;
+    }
+    &.-instruction {
+      min-height: 1500px;
+      padding: 100px 20px 0px;
+    }
+  }
+}
+
+.card-image.img
+{
+  height:150px;
+}
+
+
+.countDown_digit_cont {
+  @media #{$phone} { font-size: 3.5em !important; }
+}

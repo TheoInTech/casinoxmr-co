@@ -1,0 +1,38 @@
+//colors
+$white: #FFFFFF;
+$off-white: #F4F2ED;
+$black: #000000;
+$green-light: #17A33A;
+$green: #069600;
+$red: #d00000;
+$red-light: #e20e0e;
+$red-dark: #b90707;
+$navy-blue: #1C3144;
+$blue: #34689E;
+$blue-light: #006DE3;
+$orange-light: #FEB250;
+$orange: #F8660A;
+$orange-darker: #C85005;
+$orange-dark: #F8550A;
+$gray-dark: #10161E;
+$gray: #1E2736;
+$gray-light: #373F4C;
+$gray-lighter: #747678;
+$blue-gradient: linear-gradient(205.9deg, #6DCBFE 0%, #2A6EE0 100%);
+$red-gradient: linear-gradient(180deg, #C63A1C 0%, #941B0C 100%);
+$yellow-gradient: linear-gradient(295.9deg, #FFB400 0%, #FFC846 100%);
+$orange-gradient: linear-gradient(to bottom, #fea049, #fc6723);
+
+//fonts
+$head-font: 'Abel', sans-serif;
+$body-font: 'Lato', sans-serif;
+
+// Typography
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$font-family-sans-serif: $body-font;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$text-color: #FFFFFF;
+
+//animation
+$animation-type: cubic-bezier(.2,.5,.83,.67);

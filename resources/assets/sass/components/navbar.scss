@@ -1,0 +1,47 @@
+.navbar.navbar-default {
+  padding: 10px 150px;
+  margin: 0px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0px;
+
+  @media #{$phone} { padding: 10px 0px; height: 65px; }
+}
+
+a.navbar-brand {
+  padding: 0px;
+  width: 300px;
+
+  > img {
+    height: 100%;
+    padding: 10px 0px;
+    width: auto;
+  }
+
+  @media #{$phone} { position: absolute; left: 25px; }
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.btn-nav {
+  font-family: $body-font;
+  background-color: transparent;
+  border: 1px solid $white;
+  text-transform: none;
+  border-radius: 6px;
+  color: $white;
+  padding: 10px 30px;
+  line-height: 1.2em;
+  right: 0;
+  position: absolute;
+  max-width: 120px;
+
+  @media #{$phone} { max-width: 100px; padding: 10px 20px; }
+
+  &:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+}

@@ -1,0 +1,24 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+textarea { resize: none }
+
+p, span, button, input, a, h1, h2, h3 {
+    font-family: $head-font;
+}
+
+h4, h5, h6 {
+    font-family: $body-font;
+}
+
+ul {
+    list-style: none;
+}
