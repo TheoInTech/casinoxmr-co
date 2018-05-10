@@ -28,10 +28,8 @@ class DashboardController extends Controller
     use Generators, Getters;
 
     public function dashboard() {
-        $countries = Countries::getListForSelect();
 
         return view('layouts.dashboard')->with([
-            'countries' => $countries,
             'nextRaffleDate'=> $this->getNextRaffle(),
             'currentDate'   => Carbon::now()->format('Y-m-d\TH:i:s.uP'),
             'winners' => json_decode($this->getRecentWinners())
