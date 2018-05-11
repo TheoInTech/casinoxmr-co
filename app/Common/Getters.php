@@ -18,7 +18,10 @@ trait Getters {
 
     public function __construct() {
         $client = new Client();
-        $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
+        // $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
+        $this->exchange[0] = json_decode(json_encode(array(
+            'price_usd' => 231.00
+        )));
     }
 
     public function getTransactions($take) {
