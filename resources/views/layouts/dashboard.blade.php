@@ -26,11 +26,8 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="nav-transactions" href="#"><i class="fas fa-exchange-alt fa-2x"></a></i>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-user fa-2x"></a></i>
-                            </li>
                             <li class="nav-logo">
-                                <img class="logo" src="{{ asset('images/common/logo-cm-white.svg') }}" alt="CasinoXMR"/>
+                                <a class="nav-link" href="/logout"><i class="fas fa-user fa-2x"></a></i>
                             </li>
                         </ul>
                     </div>
@@ -42,7 +39,7 @@
                             <li class="menu-title">Dashboard</li>
 
                             <li class="menu-how">
-                                <a class="menu-link">How to Play?</a>
+                                <a class="menu-link" data-toggle="modal" data-target="#tutorial-modal" id="how-to-play">How to Play?</a>
                             </li>
                         </ul>
                     </div>
@@ -55,6 +52,9 @@
 
             </div>
         </div>
+
+        @include('includes.tutorials')
+
         {{ csrf_field() }}
 
         <input type="hidden" id="coinimp-script" value="{{ Config::get('coinimp.script') }}">

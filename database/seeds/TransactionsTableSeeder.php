@@ -24,34 +24,36 @@ class TransactionsTableSeeder extends Seeder
         $reward = $monero->baseReward / 1000000000000;
 
         $hashes = array(
-            '10000000000',
-            '20000000000',
-            '30000000000',
-            '50000000000',
-            '600000000',
-            '70000000000',
-            '80000000000',
-            '90000000000',
-            '100000000000'
+            '100000000',
+            '200000000',
+            '300000000',
+            '500000000',
+            '6000000',
+            '700000000',
+            '800000000',
+            '900000000',
+            '1000000000'
         );
 
         $day = Carbon::now();
         $format = 'Y-m-d H:i:s';
         $category = CategoriesRef::where('name', 'entry')->first();
         $data = array();
-        for($i = 1; $i <= 10; $i++) {
-            $hash = $hashes[array_rand($hashes, 1)];
-            $xmr = (($hash / $difficulty) * ($reward)) * 0.75;
-            $chip = ($xmr / 0.000001);
+        $users = User::all();
+        foreach($users as $user) {
+            for($i = 1; $i <= 10; $i++) {
+                $hash = $hashes[array_rand($hashes, 1)];
+                $xmr = (($hash / $difficulty) * ($reward)) * 0.75;
+                $chip = ($xmr / 0.000001);
 
-            $transaction = Transaction::create([
-                'category_id'   =>  $category->id,
-                'tickets'       =>  $chip,
-                'hashes'        =>  $hash
-            ]);
+                $transaction = Transaction::create([
+                    'category_id'   =>  $category->id,
+                    'chips'       =>  $chip,
+                    'hashes'        =>  $hash
+                ]);
 
-            $user = User::find($i);
-            $user->transactions()->attach($transaction->id);
+                $user->transactions()->attach($transaction->id);
+            }
         }
     }
 }

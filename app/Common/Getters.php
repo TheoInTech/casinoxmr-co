@@ -15,32 +15,30 @@ use GuzzleHttp\Exception\ClientException;
 trait Getters {
 
     protected $exchange;
+    protected $last;
+    protected $next;
 
     public function __construct() {
         $client = new Client();
-        // $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
-        $this->exchange[0] = json_decode(json_encode(array(
-            'price_usd' => 231.00
-        )));
+        $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
+        // $this->exchange[0] = json_decode(json_encode(array(
+        //     'price_usd' => 231.00
+        // )));
+
+        $this->last = Carbon::parse('last Monday 12:00:01 am');
+        $this->next = Carbon::parse('next Monday 12:00:00 am');
     }
 
     public function getTransactions($take) {
         $user = Auth::user();
-        if ($take) {
-            $transactions = $user->transactions()
-                ->join('categories_ref as cr', 'cr.id', 'transactions.category_id')
-                ->select('transactions.*','cr.name as name','cr.description as description','cr.is_gain as is_gain','cr.symbol as symbol')
-                ->orderBy('transactions.created_at', 'desc')
-                ->take($take)
-                ->get();
-        }
-        else {
-            $transactions = $user->transactions()
-                ->join('categories_ref as cr', 'cr.id', 'transactions.category_id')
-                ->select('transactions.*','cr.name as name','cr.description as description','cr.is_gain as is_gain','cr.symbol as symbol')
-                ->orderBy('transactions.created_at', 'desc')
-                ->get();
-        }
+        
+        // TODO: get sums
+        $transactions = $user->transactions()
+            ->join('categories_ref as cr', 'cr.id', 'transactions.category_id')
+            ->select('transactions.*','cr.name as name')
+            ->where('name', 'initiate')
+            ->orderBy('transactions.created_at', 'desc')
+            ->get();
 
         $collected = collect($transactions);
         $collected->transform(function ($item, $key) {
@@ -59,20 +57,17 @@ trait Getters {
      * @return mixed
      */
     public function getTotalPotSize() {
-        $last = Carbon::parse('last Monday 12:00:01 am');
-        $next = Carbon::parse('next Monday 12:00:00 am');
-
         $totalPotSize = Transaction::join('categories_ref', 'categories_ref.id', 'transactions.category_id')
                         ->where(function($query){
                             $query->where('categories_ref.name', 'entry');
                             $query->orWhere('categories_ref.name', 'consolation');
                         })
-                        ->whereBetween('transactions.created_at', [$last, $next])
+                        ->whereBetween('transactions.created_at', [$this->last, $this->next])
                         ->sum('transactions.chips');
 
         $totalLoss = Transaction::join('categories_ref', 'categories_ref.id', 'transactions.category_id')
                         ->where('categories_ref.name', 'initiate')
-                        ->whereBetween('transactions.created_at', [$last, $next])
+                        ->whereBetween('transactions.created_at', [$this->last, $this->next])
                         ->sum('transactions.chips');
 
         $totalPotSize = abs($totalPotSize - $totalLoss);
@@ -80,7 +75,7 @@ trait Getters {
         $usd = ($totalPotSize * 0.000001) * $this->exchange[0]->price_usd;
         $xmr = ($totalPotSize * 0.000001);
 
-        $pot = Pot::where('raffle_date', $next)->first();
+        $pot = Pot::where('raffle_date', $this->next)->first();
         $pot->raffle_date = Carbon::parse($pot->raffle_date)->format('Y-m-d\TH:i:s.uP');
         return json_encode([
             'USDEqual'    => $this->exchange[0]->price_usd,
@@ -94,9 +89,6 @@ trait Getters {
     }
 
     public function getTotalChips() {
-        $last = Carbon::parse('last Monday 12:00:01 am');
-        $next = Carbon::parse('next Monday 12:00:00 am');
-
         $user = Auth::user();
 
         $totalChip = $user->transactions()
@@ -105,13 +97,13 @@ trait Getters {
                             $query->where('categories_ref.name', 'entry');
                             $query->orWhere('categories_ref.name', 'consolation');
                         })
-                        ->whereBetween('transactions.created_at', [$last, $next])
+                        ->whereBetween('transactions.created_at', [$this->last, $this->next])
                         ->sum('transactions.chips');
 
         $totalLoss = $user->transactions()
                         ->join('categories_ref', 'categories_ref.id', 'transactions.category_id')
                         ->where('categories_ref.name', 'initiate')
-                        ->whereBetween('transactions.created_at', [$last, $next])
+                        ->whereBetween('transactions.created_at', [$this->last, $this->next])
                         ->sum('transactions.chips');
 
 
@@ -156,10 +148,7 @@ trait Getters {
     }
 
     public function getNextRaffle() {
-        $last = Carbon::parse('last Monday 12:00:01 am');
-        $next = Carbon::parse('next Monday 12:00:00 am');
-
-        $pot = Pot::where('raffle_date', $next)->first();
+        $pot = Pot::where('raffle_date', $this->next)->first();
         $pot->raffle_date = Carbon::parse($pot->raffle_date)->format('Y-m-d\TH:i:s.uP');
 
         return $pot->raffle_date;

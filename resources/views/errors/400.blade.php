@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="section -notfound">
-    <div class="main-container -notfound">
-      <div class="main-header -notfound">
-        <img class="logo -error" src="{{ asset('images/common/logo-cm-full.svg') }}" alt="CasinoXMR Logo"/>
-        <br>
-        400 Something went wrong
-      </div>
-        <div class="content -notfound">
-          <div class="col-lg-4 col-lg-offset-4">
-            <div class="row">
-              <div class="col-lg-8 col-lg-offset-2">
-                @if (!Auth::check())
-                <a class="btn cm-btn btn-orange" href="/">Go back to Home</a>
-                @else
-                <a class="btn cm-btn btn-orange" href="/dashboard">Go back to Dashboard</a>
-                @endif
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Splash -->
+  <div class="home-splash" id="home">
+    
+  </div>
+
+  <!-- Address -->
+  <div class="section -address" id="address">
+    
+  </div>
+
+  <!-- Error Container -->
+  <div class="error-container">
+    <img class="error-icon" src="{{ asset('images/common/ic-error-500.svg') }}" alt="Icon"/>
+    <div class="error-title">Something went wrong</div>
+    <br>
+    @if (!Auth::check())
+      <a class="error-button" href="/">Back to home</a>
+    @else
+      <a class="error-button" href="/dashboard">Back to dashboard</a>
+    @endif
   </div>
 @endsection

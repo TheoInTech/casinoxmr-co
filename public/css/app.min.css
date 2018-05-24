@@ -4472,21 +4472,21 @@ ul {
   margin-top: 8vh;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item {
+#sidebar > .sidebar-nav > .nav > .nav-item, #sidebar > .sidebar-nav > .nav .nav-logo {
   margin: 10px auto;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item.active > .nav-link {
+#sidebar > .sidebar-nav > .nav > .nav-item.active > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo.active > .nav-link {
   background: #F4F2ED !important;
   color: #F8660A !important;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item:hover > .nav-link {
+#sidebar > .sidebar-nav > .nav > .nav-item:hover > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo:hover > .nav-link {
   background-color: transparent;
   color: #FEB250;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item > .nav-link {
+#sidebar > .sidebar-nav > .nav > .nav-item > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo > .nav-link {
   color: #FFFFFF;
 }
 
@@ -4543,7 +4543,7 @@ ul {
 }
 
 .dashboard-content > .content {
-  height: 90vh;
+  height: 85vh;
   min-height: 650px;
 }
 
@@ -4568,6 +4568,7 @@ ul {
   -webkit-box-shadow: 0px 25px 30px #c4c1c1 !important;
           box-shadow: 0px 25px 30px #c4c1c1 !important;
   margin: 5px;
+  position: relative;
 }
 
 .panel.-chips {
@@ -4619,6 +4620,7 @@ ul {
   border: none;
   background: transparent;
   padding: 0px;
+  position: relative;
 }
 
 .panel.-chips .content-chips .miner-description > .speed-container > .btn-speed:hover {
@@ -5190,6 +5192,95 @@ ul {
   font-size: 12px;
   position: absolute;
   opacity: 0.8;
+}
+
+/************************
+      Transactions
+************************/
+.table-transactions {
+  margin-top: 30px;
+  color: #000000;
+}
+
+.table-transactions > .thead {
+  color: #747678;
+  font-weight: 600;
+  padding: 15px;
+}
+
+.table-transactions > .tbody {
+  font-family: "Lato", sans-serif;
+  color: #1E2736;
+}
+
+.table-transactions > .tbody .row {
+  background: #FFFFFF;
+  border-bottom: 5px solid #F4F2ED;
+  border-top: 5px solid #F4F2ED;
+  border-right: 0px;
+  border-left: 0px;
+}
+
+.table-transactions .col {
+  padding: 15px 10px;
+}
+
+/************************
+      Tutorials
+************************/
+.modal > .modal-dialog {
+  -webkit-transform: translate(0, 40%) !important;
+          transform: translate(0, 40%) !important;
+}
+
+.modal > .modal-dialog > .modal-content {
+  padding: 0px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.modal > .modal-dialog > .modal-content > .modal-body {
+  padding: 20px;
+  min-height: 150px;
+  background: #F3F3F3;
+}
+
+.modal > .modal-dialog > .modal-content > .modal-body .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1E2736;
+}
+
+.modal > .modal-dialog > .modal-content > .modal-body .content {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1E2736;
+}
+
+.modal > .modal-dialog > .modal-content > .modal-body .logo {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.modal .modal-footer {
+  border: none;
+}
+
+.modal .modal-footer > .btn-skip {
+  float: left;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #747678;
+  background: transparent;
+  border: none;
+  opacity: 0.4;
+}
+
+.modal .modal-footer > .btn-next {
+  float: right;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
 }
 
 .error-container {

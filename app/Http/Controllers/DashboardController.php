@@ -28,7 +28,6 @@ class DashboardController extends Controller
     use Generators, Getters;
 
     public function dashboard() {
-
         return view('layouts.dashboard')->with([
             'nextRaffleDate'=> $this->getNextRaffle(),
             'currentDate'   => Carbon::now()->format('Y-m-d\TH:i:s.uP'),
@@ -176,7 +175,7 @@ class DashboardController extends Controller
     }
 
     public function transactions(Request $request) {
-        return response()->json(['transactions' => $this->getTransactions($request['take'])], 200);
+        return response()->json(['transactions' => $this->getTransactions()], 200);
     }
 
     public function potSize() {

@@ -27,7 +27,7 @@
                     Start mining
                   </div>
                   <div class="speed-container" id="speed-container">
-                    <button class="btn-speed" id="btn-speed">Adjust speed</button>
+                    <a class="btn-speed" id="btn-speed" data-status="off">Adjust speed</a>
                     <div class="speed-throttle" id="speed-throttle">
                       <button class="btn btn-throttle" data-throttle="low">Low</button>
                       <button class="btn btn-throttle" data-throttle="med">Med</button>

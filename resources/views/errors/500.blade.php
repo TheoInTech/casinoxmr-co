@@ -15,6 +15,7 @@
   <div class="error-container">
     <img class="error-icon" src="{{ asset('images/common/ic-error-500.svg') }}" alt="Icon"/>
     <div class="error-title">Something went wrong</div>
+    <br>
     @if (!Auth::check())
       <a class="error-button" href="/">Back to home</a>
     @else
