@@ -6,7 +6,7 @@
         
       </canvas>
       <!-- Chips box -->
-      <div class="col-xs-12 col-sm-4 panel-padding">
+      <div class="col-xs-12 panel-padding">
         <div class="panel -chips">
           <div class="panel-body -chips">
             <div class="content-chips">
@@ -14,7 +14,7 @@
                 My Chips
               </div>
               <div class="global-body">
-                <div class="col-xs-2 miner-button">
+                <div class="col-xs-1 miner-button">
                   <button class="btn btn-mine -orange -start" id="miner-toggle" data-status="off">
                     <i class="fa fa-play -start"></i>
                   </button>

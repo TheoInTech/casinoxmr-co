@@ -21,7 +21,7 @@
   font-size: 22px;
   border-radius: 50%;
   padding: 10px 18px;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 10px;
   color: $white;
@@ -151,23 +151,45 @@
 
 #sidebar {
   padding: 0px;
-  height: 100vh;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
   background: $navy-blue;
   text-align: center;
   padding-top: 20px;
-  width: 6%;
+  width: 100px;
+
+  @media #{$phone} {
+    width: 100%;
+    height: 80px;
+    margin: 0px;
+    padding: 10px;
+    overflow: hidden;
+    position: absolute;
+    font-size: 20px;
+  }
 
   > .sidebar-nav {
     margin-top: 8vh;
+    @media #{$phone} { margin-top: 0px; text-align: right; }
 
     > .nav {
       > .nav-item, .nav-logo {
         margin: 10px auto;
+        @media #{$phone} { 
+          margin: 0px 15px;
+          display: inline-block;
+        }
 
         &.active {
           > .nav-link {
             background: $off-white !important;
             color: $orange !important;
+
+            @media #{$phone} { background: none !important; }
           }
         }
 
@@ -188,6 +210,12 @@
         bottom: 25px;
         width: 100%;
         opacity: 0.5;
+
+        @media #{$phone} { 
+          position: relative;
+          bottom: 0;
+          width: inherit;
+        }
       }
     }
   }
@@ -196,8 +224,9 @@
 .dashboard-content {
   background: $off-white;
   padding: 10px 20px !important;
-  height: 100vh;
-  width: 94% !important;
+  height: 100%;
+  margin-left: 100px;
+  @media #{$phone} { margin-left: 0px; margin-top: 100px; }
 
   > .header {
     height: 8vh;
@@ -283,6 +312,10 @@
       > .global-title, .global-body {
         color: $black;
         font-family: $head-font;
+      }
+
+      .miner-button {
+        min-width: 90px;
       }
 
       .miner-description {
@@ -388,6 +421,8 @@
     background: transparent;
     border: none;
 
+    @media #{$netbook} { min-height: 265px; }
+
     .content-pot {
       background: $orange;
       height: 18vh;
@@ -397,13 +432,17 @@
       color: $white;
       padding: 25px;
 
+      @media #{$netbook} { min-height: 155px; }
+
       > .global-body {
         position: absolute;
-        width: 84vh;
+        width: 94%;
         height: 10vh;
         min-height: 75px;
 
         > .current-pot {
+          @media #{$netbook} { font-size: 40px; }
+
           font-size: 50px;
           font-weight: 600;
           padding: 0;
@@ -425,11 +464,13 @@
 
     .content-countdown {
       background: $orange-dark;
-      height: 12vh;
+      height: 12%;
       min-height: 90px;
       border-bottom-right-radius: 6px;
       border-bottom-left-radius: 6px;
       padding: 10px;
+
+      @media #{$netbook} { height: 20%; min-height: 110px; }
 
       > .icon {
         font-size: 40px;
@@ -445,6 +486,7 @@
         display: inline-block;
 
         .current-countdown {
+          @media #{$netbook} { font-size: 20px; }
           font-size: 26px;
           font-weight: 600;
         }
@@ -457,6 +499,8 @@
     min-height: 200px;
     background: $white;
     color: $black;
+
+    @media #{$netbook} { min-height: 285px; }
 
   }
 

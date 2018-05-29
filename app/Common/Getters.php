@@ -19,30 +19,30 @@ trait Getters {
     protected $next;
 
     public function __construct() {
-        $client = new Client();
-        $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
-        // $this->exchange[0] = json_decode(json_encode(array(
-        //     'price_usd' => 231.00
-        // )));
+        // $client = new Client();
+        // $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
+        $this->exchange[0] = json_decode(json_encode(array(
+            'price_usd' => 231.00
+        )));
 
         $this->last = Carbon::parse('last Monday 12:00:01 am');
         $this->next = Carbon::parse('next Monday 12:00:00 am');
     }
 
-    public function getTransactions($take) {
+    public function getTransactions($take = 10) {
         $user = Auth::user();
         
         // TODO: get sums
         $transactions = $user->transactions()
             ->join('categories_ref as cr', 'cr.id', 'transactions.category_id')
             ->select('transactions.*','cr.name as name')
-            ->where('name', 'initiate')
+            ->whereBetween('transactions.created_at', [Carbon::parse('last week'), Carbon::now()])
             ->orderBy('transactions.created_at', 'desc')
             ->get();
 
         $collected = collect($transactions);
         $collected->transform(function ($item, $key) {
-            $item['transacted_at'] = $item->created_at->format('M d');
+            $item['transacted_at'] = $item->created_at->format('Y-m-d');
             $item->chips = number_format($item->chips, 2, '.', ',');
 
             return $item;

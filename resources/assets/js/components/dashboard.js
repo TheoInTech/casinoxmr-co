@@ -198,10 +198,27 @@ $(function() {
             /*
              Add to recent transactions
              */
-            var li = document.createElement("li");
-            li.setAttribute('class', 'item');
-            var col1 = document.createElement("div");
-            col1.setAttribute('class', 'col-xs-2');
+            var tr = document.createElement("tr");
+            tr.setAttribute('class', 'row');
+
+            var date = document.createElement("td");
+            date.setAttribute('class', 'col');
+            var dateText = document.createTextNode(res.transactions[i].transacted_at);
+            date.appendChild(dateText);
+
+            var chips = document.createElement("td");
+            chips.setAttribute('class', 'col');
+            var chipsText = document.createTextNode(res.transactions[i].chips);
+            chipsText.appendChild(chipsText);
+
+            var category = document.createElement("td");
+            category.setAttribute('class', 'col');
+            var categoryText = document.createTextNode(res.transactions[i].chips);
+            categoryText.appendChild(chipsText);
+
+            var description = document.createElement("td");
+            description.setAttribute('class', 'col');
+
             var date = document.createElement("span");
             date.setAttribute('class', 'body uppercase');
             var dateText = document.createTextNode(res.transactions[i].transacted_at);
@@ -227,7 +244,7 @@ $(function() {
             li.appendChild(col2);
             li.appendChild(col3);
 
-            var transactions = document.getElementById(from);
+            var transactions = document.getElementById("transactions-body");
             transactions.appendChild(li);
           }
         }
@@ -556,7 +573,7 @@ $(function() {
         toggle.click();
       }
       toggle.css({'z-index':'9999', 'box-shadow':'0px 0px 40px rgba(0,0,0,0.6)'});
-      tDialog.attr('style', '-webkit-transform:translate(-45%, 40%) !important;-ms-transform:translate(-45%, 40%) !important;transform:translate(-45%, 40%) !important');
+      // tDialog.attr('style', '-webkit-transform:translate(-45%, 40%) !important;-ms-transform:translate(-45%, 40%) !important;transform:translate(-45%, 40%) !important');
 
       tTitle.html("Mining button");
       tContent.html("We've started the miner for you to generate raffle chips right away. However, if you wish to pause the miner, you can do so through this Play/Pause button.");
@@ -572,7 +589,7 @@ $(function() {
       toggle.css({'z-index':'1', 'box-shadow':'none'});
       tSpeed.css({'z-index':'9999'});
       tThrottle.css({'z-index':'9999', 'box-shadow':'0px 0px 40px rgba(0,0,0,0.6)'});
-      tDialog.attr('style', '-webkit-transform:translate(0%, 90%) !important;-ms-transform:translate(0%, 90%) !important;transform:translate(0%, 90%) !important');
+      tDialog.attr('style', '-webkit-transform:translate(0%, 0%) !important;-ms-transform:translate(0%, 0%) !important;transform:translate(0%, 0%) !important');
 
       tTitle.html("Adjusting mining power");
       tContent.html("You can adjust the rate of generating raffle chips from the miner. The higher CPU power you allot, the more chances you earn to win the jackpot.");
@@ -587,7 +604,7 @@ $(function() {
       tThrottle.css({'z-index':'1', 'box-shadow':'none'});
       tSpeed.css({'z-index':'1'});
       tPot.attr('style','z-index:1045;box-shadow:none !important');
-      tDialog.attr('style', '-webkit-transform:translate(-45%, 85%) !important;-ms-transform:translate(-45%, 85%) !important;transform:translate(-45%, 85%) !important');
+      tDialog.attr('style', '-webkit-transform:translate(0%, 40%) !important;-ms-transform:translate(0%, 40%) !important;transform:translate(0%, 40%) !important');
 
       tTitle.html("Pot size");
       tContent.html("This is the current jackpot prize for the running draw. It represents the corresponding USD value of Monero prizes to be won by participating Casino Monero users.");
@@ -600,10 +617,10 @@ $(function() {
     }
     else if ( tNext == 'last' ) {
       tPot.css({'z-index':'1','box-shadow':'0px 25px 30px #c4c1c1 !important'});
-      tDialog.attr('style', '-webkit-transform:translate(0%, 40%) !important;-ms-transform:translate(0%, 40%) !important;transform:translate(0%, 40%) !important');
+      // tDialog.attr('style', '-webkit-transform:translate(0%, 60%) !important;-ms-transform:translate(0%, 60%) !important;transform:translate(0%, 60%) !important');
 
       tTitle.html("Congratulations!");
-      tContent.html("Congratulations! You are now a step closer to winning the jackpot.<br>Tip: Keep this page open to increase your chances of winning");
+      tContent.html("Congratulations! You are now a step closer to winning the jackpot.<br>Tip: Keep this page open to increase your chances of winning.");
 
       $("#tutorial.modal").data('current', tNext);
       $(this).data('next', 'intro');

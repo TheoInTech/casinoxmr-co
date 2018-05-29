@@ -17,23 +17,24 @@
             <!-- Top banner for chips generation -->
             @include('includes.topbanner')
             <div class="row row-offcanvas row-offcanvas-left">
-                <div class="col-sm-1 col-xs-12 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                <aside class="col-xs-12 col-sm-1 sidebar-offcanvas" id="sidebar" role="navigation">
                     <div class="sidebar-nav">
                         <ul class="nav">
                             <li class="nav-item active">
-                                <a class="nav-link" id="nav-main" href="#"><i class="fas fa-th-large fa-2x"></i></a>
+                                <a class="nav-link pl-0" id="nav-main" href="#"><i class="fas fa-th-large fa-2x"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="nav-transactions" href="#"><i class="fas fa-exchange-alt fa-2x"></a></i>
+                                <a class="nav-link pl-0" id="nav-transactions" href="#"><i class="fas fa-exchange-alt fa-2x"></a></i>
                             </li>
                             <li class="nav-logo">
-                                <a class="nav-link" href="/logout"><i class="fas fa-user fa-2x"></a></i>
+                                <a class="nav-link pl-0" href="/logout"><i class="fas fa-user fa-2x"></a></i>
                             </li>
                         </ul>
                     </div>
-                </div>
+                </aside>
 
-                <div class="col-sm-11 col-xs-12 dashboard-content">
+                <div class="col py-3 dashboard-content">
                     <div class="header">
                         <ul class="menu-list">
                             <li class="menu-title">Dashboard</li>

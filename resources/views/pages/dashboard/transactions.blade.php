@@ -8,7 +8,7 @@
 			  <th scope="col">Pot Grand Winner</th>
 			</tr>
 		</thead>
-		<tbody class="tbody">
+		<tbody class="tbody" id="transactions-body">
 		  <tr class="row">
 		    <td class="col">2018-05-17</td>
 		    <td class="col">24 tickets</td>

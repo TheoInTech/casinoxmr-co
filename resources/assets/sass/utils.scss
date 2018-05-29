@@ -103,8 +103,8 @@
 
     &, &:focus, &:active {
       right: 25px;
-      top: 20px;
-      position: absolute;
+      top: 0px;
+      position: relative;
       color: $white;
       opacity: 1;
       font-weight: 400;
@@ -245,27 +245,35 @@
   }
 }
 
+.text-orange {
+  color: $orange !important;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-black {
+  color: $black !important;
+}
+
+.text-gray {
+  color: $gray !important;
+}
+
 .head {
   font-family: $head-font;
-  font-size: 24px;
+  font-size: 48px;
   margin: 10px 0px;
-  line-height: 40px;
+  line-height: 1.2em;
   letter-spacing: 2px;
 }
 
 .body {
   font-family: $body-font;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 34px;
   margin: 10px 0px;
-}
-
-.text-white {
-  color: $white;
-}
-
-.text-black {
-  color: $black;
 }
 
 .box-shadow {
@@ -637,4 +645,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .datepicker {
   color: $black !important;
+}
+
+.hide, .none {
+  display: none;
 }

@@ -4,25 +4,57 @@
   <!-- Splash -->
   <div class="home-splash" id="home">
     <div class="row">
-      <div class="col-sm-5 col-xs-12 text-left home-left">
+      <div class="col-md-5 col-xs-12 text-left home-left">
+
         <img class="logo" src="{{ asset('images/common/logo-cm-full.svg') }}" alt="CasinoXMR Logo"/>
+        
+        <div class="card -home">
+          <div class="card-body content-countdown">
+            <span class="card-title">Next draw in</span>
+            
+              
+              <div class="cd-item">
+                <div class="number">12</div>
+                <div class="rep">days</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="number">4</div>
+                <div class="rep">hours</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="number">32</div>
+                <div class="rep">mins</div>
+              </div>
+
+              <div class="cd-item">
+                <div class="number">24</div>
+                <div class="rep">secs</div>
+              </div>
+
+
+          </div>
+          <div class="card-footer -home content-pot">
+            <span class="pot-title text-orange">
+              Current pot
+            </span>
+            <span class="pot-value text-black">
+              $ 353,000
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-5 offset-1 col-xs-12 text-left home-right">
         <h1 class="head">
-          A lottery, FREE of the fee.
+          A lottery,<br>FREE of the fee.
         </h1>
         <h2 class="body">
           Join the world's only Monero lottery.<br>
           No fees, just use your PC.
         </h2>
-      </div>
-
-      <div class="col-sm-7 col-xs-12 text-center home-right">
-        <span class="dollar-sign">&dollar;</span>
-        <span class="value-list">
-          @foreach($digits as $digit)
-            <span class="value-item">{{ $digit }}</span>
-          @endforeach
-        </span>
-        <div class="note-text">*Current pot</div>
       </div>
     </div>
   </div>
@@ -58,9 +90,13 @@
           </div>
         </form>
 
-        <a href="https://mymonero.com/" class="mymonero" target="_blank">
-          Create new monero address
-        </a>
+        <span>
+          No Monero address yet? &nbsp;
+          <a href="https://mymonero.com/" class="mymonero" target="_blank">
+            Create new monero address
+          </a>
+        </span>
+        
       </div>
     </div>
   </div>

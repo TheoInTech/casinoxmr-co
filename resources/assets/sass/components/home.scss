@@ -1,13 +1,13 @@
 .home-splash {
   & {
-    background: url('/images/home/bg-home.svg') no-repeat center bottom;
+    background: url('/images/home/bg.svg') no-repeat center bottom;
     background-size: cover;
     color: $black;
     display: inline-block;
     height: 65vh;
     width: 100%;
     position: relative;
-    padding: 50px 200px;
+    padding: 50px 150px;
     border: none;
     min-height: 350px;
 
@@ -66,7 +66,7 @@
   }
 
   .logo {
-    max-width: 400px;
+    max-width: 300px;
     margin: 30px 0px;
   }
 }
@@ -74,14 +74,22 @@
 .section {
 
   &.-address {
-    height: 33vh;
+    height: 50vh;
     color: $white;
     background: $navy-blue;
     text-align: center;
-    position: relative;
-    padding: 20px 200px 50px;
+    position: fixed;
+    padding: 60px 200px;
     min-height: 210px;
     margin-top: -20px;
+    transform: skewY(4deg);
+    bottom: -40px;
+    width: inherit;
+    z-index: 1;
+
+    > .main-container {
+      transform: skewY(-4deg);
+    }
 
     .head {
       font-weight: 400;
@@ -91,8 +99,7 @@
 
     .mymonero {
       color: $orange;
-      font-weight: 200;
-      font-size: 12px;
+      font-size: 14px;
       text-transform: uppercase;
 
       &:hover {
@@ -180,6 +187,12 @@
   }
 }
 
+#modal-privacy-policy, #modal-terms-and-conditions {
+  > .modal-dialog {
+    transform: translate(0, 0%) !important;
+  }
+}
+
 @media #{$tablet} {
   .section {
     & {
@@ -242,4 +255,81 @@
 
 .countDown_digit_cont {
   @media #{$phone} { font-size: 3.5em !important; }
+}
+
+.card {
+  box-shadow: 0px 25px 30px #c4c1c1 !important;
+  margin: 5px;
+  position: relative;
+
+  &.-home {
+    border: none;
+    box-shadow: 0px 5px 15px #000 !important;
+    z-index: 2;
+    border-radius: 6px;
+
+    .content-countdown {
+      background: url('/images/home/draw-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 200px;
+      color: $white;
+      padding: 25px;
+      font-weight: 600;
+      text-align: center;
+
+      > .card-title {
+        font-weight: 600;
+        display: block;
+        text-align: left;
+      }
+      
+      > .cd-item {
+        padding: 10px 0px;
+        background: $white;
+        text-align: center;
+        display: inline-block;
+        min-width: 100px;
+
+        > .number {
+          font-weight: 600;
+          font-size: 42px;
+          color: $orange;
+        }
+
+        > .rep {
+          color: $gray-lighter;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+      }  
+       
+    }
+
+    .content-pot {
+      background: $white;
+      padding: 10px 25px;
+
+      > .pot-title {
+        float: left;
+        line-height: 40px;
+      }
+
+      > .pot-value {
+        float: right;
+        font-weight: 800;
+        font-size: 28px;
+        font-family: $head-font;
+      }
+    }
+  }
+
+  .card-content {
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .card-body {
+    padding: 0px;
+  }
 }

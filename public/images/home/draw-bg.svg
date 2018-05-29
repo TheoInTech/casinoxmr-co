@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="513px" height="229px" viewBox="0 0 513 229" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>D9989043-C101-4F31-9DDA-8CABE44512C0</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-6.2%" y="-6.8%" width="112.5%" height="122.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="12" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.288265306   0 0 0 0 0.288265306   0 0 0 0 0.288265306  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FEA049" offset="0%"></stop>
+            <stop stop-color="#FC6723" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-3" x="0" y="0" width="481" height="197" rx="2"></rect>
+    </defs>
+    <g id="mockup" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="homepage" transform="translate(-128.000000, -155.000000)">
+            <g id="Group-8" filter="url(#filter-1)" transform="translate(144.000000, 159.000000)">
+                <g id="draw">
+                    <g id="draw_bg">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Rectangle" fill="url(#linearGradient-2)" xlink:href="#path-3"></use>
+                        <circle id="Oval" fill="#FFFFFF" style="mix-blend-mode: soft-light;" opacity="0.200000003" mask="url(#mask-4)" cx="459" cy="0" r="116"></circle>
+                        <circle id="Oval" fill="#FFFFFF" style="mix-blend-mode: soft-light;" opacity="0.200000003" mask="url(#mask-4)" cx="-28" cy="140" r="116"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
