@@ -11,11 +11,12 @@
     border: none;
     min-height: 350px;
 
-    @media #{$phone} { height: 145vh; padding: 100px 20px 0px; }
+    @media #{$netbook} { height: 50vh; padding: 20px 20px 0px; }
   }
 
   .home-left {
     margin-left: auto;
+    text-align: left;
 
     .head {
       font-size: 29px;
@@ -31,38 +32,17 @@
   .home-right {
     margin-top: 80px;
     margin-right: auto;
+    text-align: left;
 
-    > .dollar-sign {
-      color: $gray-light;
-      font-size: 100px;
-      font-weight: 700;
-      font-style: italic;
-      margin-right: 10px;
+    @media #{$netbook} { margin-top: 30px; text-align: center; }
+
+    .head {
+      @media #{$netbook} { font-size: 36px; }
     }
 
-    > .value-list {
-      
-      > .value-item {
-        background: $orange;
-        box-shadow: 5px 5px 0px $orange-darker;
-        border-radius: 3px;
-        padding: 0px 10px;
-        margin: 0px 5px;
-        font-size: 80px;
-        font-weight: 800;
-        font-family: $body-font;
-        color: $white;
-      }
+    .body {
+      @media #{$netbook} { font-size: 18px; }
     }
-
-    > .note-text {
-      font-weight: 600;
-      font-size: 14px;
-      color: $black;
-      margin-top: -10px;
-    }
-
-    @media #{$phone} { margin-top: 30px; }
   }
 
   .logo {
@@ -87,6 +67,8 @@
     width: inherit;
     z-index: 1;
 
+    @media #{$netbook} { padding: 60px 20px; position: relative; bottom: -50vh; }
+
     > .main-container {
       transform: skewY(-4deg);
     }
@@ -95,12 +77,16 @@
       font-weight: 400;
       font-size: 18px;
       letter-spacing: 1px;
+
+      @media #{$netbook} { font-size: 14px; }
     }
 
     .mymonero {
       color: $orange;
       font-size: 14px;
       text-transform: uppercase;
+
+      @media #{$netbook} { font-size: 12px; }
 
       &:hover {
         opacity: 0.8;
@@ -110,7 +96,7 @@
 
     .cm-form {
       width: 600px;
-      @media #{$phone} { height: 120px; margin: auto; }
+      @media #{$netbook} { height: 120px; margin: auto; }
 
       > .input-group {
         margin: auto;
@@ -210,52 +196,11 @@
   }
 }
 
-@media #{$phone} {
-  .home-splash {
-    > .logo.-main {
-      margin-top: 20px;
-      max-width: 250px;
-    }
-
-    > .subhead {
-      font-size: 14px;
-      line-height: 24px;
-      margin-bottom: 20px;
-    }
-
-    > .bl-form {
-      & {
-        max-width: 280px;
-      }
-      .bl-input {
-        font-size: 12px;
-      }
-      .content {
-        font-size: 14px;
-      }
-    }
-  }
-
-  .section {
-    & {
-      padding: 0px;
-    }
-    &.-instruction {
-      min-height: 1500px;
-      padding: 100px 20px 0px;
-    }
-  }
-}
-
 .card-image.img
 {
   height:150px;
 }
 
-
-.countDown_digit_cont {
-  @media #{$phone} { font-size: 3.5em !important; }
-}
 
 .card {
   box-shadow: 0px 25px 30px #c4c1c1 !important;
@@ -288,18 +233,24 @@
         background: $white;
         text-align: center;
         display: inline-block;
-        min-width: 100px;
+        min-width: 85px;
+
+        @media #{$netbook} { min-width: 80px; }
 
         > .number {
           font-weight: 600;
-          font-size: 42px;
+          font-size: 36px;
           color: $orange;
+
+          @media #{$netbook} { font-size: 28px; }
         }
 
         > .rep {
           color: $gray-lighter;
-          font-size: 18px;
+          font-size: 16px;
           text-transform: uppercase;
+
+          @media #{$netbook} { font-size: 14px; }
         }
       }  
        

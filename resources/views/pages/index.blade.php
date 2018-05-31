@@ -4,7 +4,7 @@
   <!-- Splash -->
   <div class="home-splash" id="home">
     <div class="row">
-      <div class="col-md-5 col-xs-12 text-left home-left">
+      <div class="col-12 col-sm-5 home-left">
 
         <img class="logo" src="{{ asset('images/common/logo-cm-full.svg') }}" alt="CasinoXMR Logo"/>
         
@@ -47,7 +47,7 @@
 
       </div>
 
-      <div class="col-md-5 offset-1 col-xs-12 text-left home-right">
+      <div class="col-12 offset-0  col-sm-5 offset-sm-1 home-right">
         <h1 class="head">
           A lottery,<br>FREE of the fee.
         </h1>
@@ -90,8 +90,8 @@
           </div>
         </form>
 
-        <span>
-          No Monero address yet? &nbsp;
+        <span class="head">
+          No Monero address yet?
           <a href="https://mymonero.com/" class="mymonero" target="_blank">
             Create new monero address
           </a>

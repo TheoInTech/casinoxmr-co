@@ -13537,15 +13537,16 @@ ul {
   min-height: 350px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1280px) {
   .home-splash {
-    height: 145vh;
-    padding: 100px 20px 0px;
+    height: 50vh;
+    padding: 20px 20px 0px;
   }
 }
 
 .home-splash .home-left {
   margin-left: auto;
+  text-align: left;
 }
 
 .home-splash .home-left .head {
@@ -13561,39 +13562,25 @@ ul {
 .home-splash .home-right {
   margin-top: 80px;
   margin-right: auto;
+  text-align: left;
 }
 
-.home-splash .home-right > .dollar-sign {
-  color: #373F4C;
-  font-size: 100px;
-  font-weight: 700;
-  font-style: italic;
-  margin-right: 10px;
-}
-
-.home-splash .home-right > .value-list > .value-item {
-  background: #F8660A;
-  -webkit-box-shadow: 5px 5px 0px #C85005;
-          box-shadow: 5px 5px 0px #C85005;
-  border-radius: 3px;
-  padding: 0px 10px;
-  margin: 0px 5px;
-  font-size: 80px;
-  font-weight: 800;
-  font-family: "Lato", sans-serif;
-  color: #FFFFFF;
-}
-
-.home-splash .home-right > .note-text {
-  font-weight: 600;
-  font-size: 14px;
-  color: #000000;
-  margin-top: -10px;
-}
-
-@media (max-width: 640px) {
+@media (max-width: 1280px) {
   .home-splash .home-right {
     margin-top: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home-splash .home-right .head {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home-splash .home-right .body {
+    font-size: 18px;
   }
 }
 
@@ -13618,6 +13605,14 @@ ul {
   z-index: 1;
 }
 
+@media (max-width: 1280px) {
+  .section.-address {
+    padding: 60px 20px;
+    position: relative;
+    bottom: -50vh;
+  }
+}
+
 .section.-address > .main-container {
   -webkit-transform: skewY(-4deg);
           transform: skewY(-4deg);
@@ -13629,10 +13624,22 @@ ul {
   letter-spacing: 1px;
 }
 
+@media (max-width: 1280px) {
+  .section.-address .head {
+    font-size: 14px;
+  }
+}
+
 .section.-address .mymonero {
   color: #F8660A;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+  .section.-address .mymonero {
+    font-size: 12px;
+  }
 }
 
 .section.-address .mymonero:hover {
@@ -13644,7 +13651,7 @@ ul {
   width: 600px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1280px) {
   .section.-address .cm-form {
     height: 120px;
     margin: auto;
@@ -13735,42 +13742,8 @@ ul {
   }
 }
 
-@media (max-width: 640px) {
-  .home-splash > .logo.-main {
-    margin-top: 20px;
-    max-width: 250px;
-  }
-  .home-splash > .subhead {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 20px;
-  }
-  .home-splash > .bl-form {
-    max-width: 280px;
-  }
-  .home-splash > .bl-form .bl-input {
-    font-size: 12px;
-  }
-  .home-splash > .bl-form .content {
-    font-size: 14px;
-  }
-  .section {
-    padding: 0px;
-  }
-  .section.-instruction {
-    min-height: 1500px;
-    padding: 100px 20px 0px;
-  }
-}
-
 .card-image.img {
   height: 150px;
-}
-
-@media (max-width: 640px) {
-  .countDown_digit_cont {
-    font-size: 3.5em !important;
-  }
 }
 
 .card {
@@ -13809,19 +13782,37 @@ ul {
   background: #FFFFFF;
   text-align: center;
   display: inline-block;
-  min-width: 100px;
+  min-width: 85px;
+}
+
+@media (max-width: 1280px) {
+  .card.-home .content-countdown > .cd-item {
+    min-width: 80px;
+  }
 }
 
 .card.-home .content-countdown > .cd-item > .number {
   font-weight: 600;
-  font-size: 42px;
+  font-size: 36px;
   color: #F8660A;
+}
+
+@media (max-width: 1280px) {
+  .card.-home .content-countdown > .cd-item > .number {
+    font-size: 28px;
+  }
 }
 
 .card.-home .content-countdown > .cd-item > .rep {
   color: #747678;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
+}
+
+@media (max-width: 1280px) {
+  .card.-home .content-countdown > .cd-item > .rep {
+    font-size: 14px;
+  }
 }
 
 .card.-home .content-pot {
