@@ -540,7 +540,7 @@ $(function() {
     toggle.css({'z-index':'1', 'box-shadow':'none'});
       $("#speed-throttle").css({'z-index':'1', 'box-shadow':'none'});
       $("#btn-speed").css({'z-index':'1'});
-      $(".panel.-global").css({'z-index':'1','box-shadow':'0px 25px 30px #c4c1c1 !important'});
+      $(".card.-global").css({'z-index':'1','box-shadow':'0px 25px 30px #c4c1c1 !important'});
 
     setTimeout(function() {
       $("#tutorial-dialog").attr('style', '-webkit-transform:translate(0%, 40%) !important;-ms-transform:translate(0%, 40%) !important;transform:translate(0%, 40%) !important');
@@ -561,7 +561,7 @@ $(function() {
     var tDialog = $("#tutorial-dialog");
     var tSpeed = $("#btn-speed");
     var tThrottle = $("#speed-throttle");
-    var tPot = $(".panel.-global");
+    var tPot = $(".card.-global");
     var tModal = $("#tutorial.modal");
 
     tSkip.html("End Walkthrough");

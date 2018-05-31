@@ -13816,8 +13816,7 @@ ul {
 }
 
 .card.-home .content-countdown {
-  background: url("/images/home/draw-bg.png") no-repeat center center fixed;
-  background-size: cover;
+  background: #fd8838;
   min-height: 200px;
   color: #FFFFFF;
   padding: 25px;
@@ -14104,7 +14103,7 @@ ul {
 }
 
 #sidebar > .sidebar-nav {
-  margin-top: 8vh;
+  margin-top: 60px;
 }
 
 @media (max-width: 640px) {
