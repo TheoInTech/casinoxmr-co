@@ -15175,6 +15175,12 @@ a.navbar-brand > img {
   display: inline;
 }
 
+@media (max-width: 640px) {
+  .cm-footer ul li > a {
+    font-size: 14px;
+  }
+}
+
 .cm-footer .footer-logo {
   height: 20px;
 }
