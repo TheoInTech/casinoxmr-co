@@ -494,7 +494,7 @@
       padding: 10px;
       color: $white;
 
-      @media #{$netbook} { height: 20%; min-height: 130px; padding: 0px 25px; }
+      @media #{$netbook} { height: 20%; min-height: 130px; padding: 25px; }
 
       > .icon {
         font-size: 40px;

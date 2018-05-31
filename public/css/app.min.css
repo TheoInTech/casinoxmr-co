@@ -14476,7 +14476,7 @@ ul {
   .card.-global .content-countdown {
     height: 20%;
     min-height: 130px;
-    padding: 0px 25px;
+    padding: 25px;
   }
 }
 

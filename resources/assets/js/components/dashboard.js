@@ -308,10 +308,10 @@ $(function() {
     timeRemaining = (timeRemaining % 60);
     seconds = parseInt(timeRemaining);
 
-    clock.html(('0' + days).slice(-2) + ' days, ' +
-                ('0' + hours).slice(-2) + ' hrs, ' +
-                ('0' + minutes).slice(-2) + ' mins, ' +
-                ('0' + seconds).slice(-2) + ' secs ');
+    clock.html(('0' + days).slice(-2) + ' d, ' +
+                ('0' + hours).slice(-2) + ' h, ' +
+                ('0' + minutes).slice(-2) + ' m, ' +
+                ('0' + seconds).slice(-2) + ' s ');
   
     currentDate.setSeconds( currentDate.getSeconds() + 1 );
   }
