@@ -27,8 +27,12 @@ class HomeController extends Controller
         }
 
         $pot = json_decode($this->getTotalPotSize());
-        $potSize = ceil( $pot->exchange->usd );
-        return view('pages.index')->with(['digits' => str_split( $potSize ) ]);
+
+        return view('pages.index')->with([
+            'potSize'       => $pot->exchange->usd,
+            'nextRaffleDate'=> $this->getNextRaffle(),
+            'currentDate'   => Carbon::now()->format('Y-m-d\TH:i:s.uP')
+        ]);
     }
 
     public function signup(Request $request) {

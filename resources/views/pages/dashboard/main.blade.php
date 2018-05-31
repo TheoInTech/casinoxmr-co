@@ -1,25 +1,25 @@
 <div id="main">
 
   <div class="row row-graph">
-    <div class="col-xs-12 no-padding">
+    <div class="col-12 no-padding">
       <canvas class="graph-transactions" id="graph-transactions">
         
       </canvas>
       <!-- Chips box -->
-      <div class="col-xs-12 panel-padding">
-        <div class="panel -chips">
-          <div class="panel-body -chips">
+      <div class="col-12 panel-padding">
+        <div class="card -chips">
+          <div class="card-body -chips">
             <div class="content-chips">
               <div class="global-title">
                 My Chips
               </div>
-              <div class="global-body">
-                <div class="col-xs-1 miner-button">
+              <div class="row global-body">
+                <div class="col-12 col-sm-1 miner-button">
                   <button class="btn btn-mine -orange -start" id="miner-toggle" data-status="off">
                     <i class="fa fa-play -start"></i>
                   </button>
                 </div>
-                <div class="col-xs-10 miner-description">
+                <div class="col-12 col-sm-10 miner-description">
                   <div class="chip-number" id="chip-number">
                     <!-- Chip numbers -->
                   </div>
@@ -44,9 +44,9 @@
   </div>
     
   <div class="row row-panel">
-    <div class="col-xs-12 col-sm-6 panel-padding">
-      <div class="panel -global">
-        <div class="panel-body -global">
+    <div class="col-12 col-sm-6 panel-padding">
+      <div class="card -global">
+        <div class="card-body -global">
           <div class="content-pot">
             <div class="global-title">
               Current pot
@@ -58,19 +58,19 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="content-countdown">
-            <div class="icon">
-              <i class="fa fa-clock"></i>
+        <div class="card-footer content-countdown">
+          <div class="icon">
+            <i class="fa fa-clock"></i>
+          </div>
+          <div class="countdown">
+            <div class="global-title">
+              Time remaining until next draw
             </div>
-            <div class="countdown">
-              <div class="global-title">
-                Time remaining until next draw
-              </div>
-              <div class="global-body">
-                <div class="current-countdown" id="current-countdown">
-                  <!-- Next raffle countdown -->
-                </div>
+            <div class="global-body">
+              <div class="current-countdown" id="current-countdown">
+                <!-- Next raffle countdown -->
               </div>
             </div>
           </div>
@@ -78,12 +78,12 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-sm-6 panel-padding">
-      <div class="panel -payouts">
-        <div class="panel-heading -payouts">
+    <div class="col-12 col-sm-6 panel-padding">
+      <div class="card -payouts">
+        <div class="card-header -payouts">
           Recent payouts
         </div>
-        <div class="panel-body -payouts">
+        <div class="card-body -payouts">
           @if ( count($winners) > 0 )
             <table class="table table-striped">
               <thead>

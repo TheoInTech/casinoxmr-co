@@ -18,7 +18,7 @@ $(function() {
 
   loadTotalPotSize();
   loadTotalChips();
-  loadHistory();
+  // loadHistory();
 
   if (location.href.split('#').pop() == 'transactions') {
     viewTransactions();
@@ -93,7 +93,7 @@ $(function() {
           success: function(res) {
             loadTotalPotSize();
             loadTotalChips();
-            loadHistory();
+            // loadHistory();
           },
           error: function(err) {
             alert(err.responseJSON.message);
@@ -226,7 +226,7 @@ $(function() {
             col1.appendChild(date);
 
             var col2 = document.createElement("div");
-            col2.setAttribute('class', 'col-xs-6');
+            col2.setAttribute('class', 'col-6');
             var descriptionText = document.createTextNode(' ' + res.transactions[i].description);
             col2.appendChild(descriptionText);
 
@@ -234,10 +234,10 @@ $(function() {
             var chipText = document.createTextNode(res.transactions[i].chips + ' chips');
             col3.appendChild(chipText);
             if (res.transactions[i].is_gain == 1) {
-              col3.setAttribute('class', 'col-xs-4 text-success');
+              col3.setAttribute('class', 'col-4 text-success');
             }
             else {
-              col3.setAttribute('class', 'col-xs-4 text-danger');
+              col3.setAttribute('class', 'col-4 text-danger');
             }
 
             li.appendChild(col1);
@@ -313,9 +313,7 @@ $(function() {
                 ('0' + minutes).slice(-2) + ' minutes, ' +
                 ('0' + seconds).slice(-2) + ' seconds ');
   
-    if (timeRemaining <= 0) {
-      clearInterval(timeInterval);
-    }
+    currentDate.setSeconds( currentDate.getSeconds() + 1 );
   }
 
   function loadHistory() {
@@ -548,7 +546,7 @@ $(function() {
       $("#tutorial-dialog").attr('style', '-webkit-transform:translate(0%, 40%) !important;-ms-transform:translate(0%, 40%) !important;transform:translate(0%, 40%) !important');
 
       $("#tutorial-modal-title").html("Welcome to Casino Monero!");
-      $("#tutorial-modal-content").html('<div class="col-xs-8" style="padding: 0px;">The only Monero raffle that lets you mine your way to the jackpot. </div><div class="col-xs-3 col-xs-offset-1" style="padding: 0px;margin-top: -50px;"><img class="logo" src="/images/common/logo-cm.svg" alt="CasinoXMR"/></div>');
+      $("#tutorial-modal-content").html('<div class="col-8" style="padding: 0px;">The only Monero raffle that lets you mine your way to the jackpot. </div><div class="col-3 offset-1" style="padding: 0px;margin-top: -30px;"><img class="logo" src="/images/common/logo-cm.svg" alt="CasinoXMR"/></div>');
       $("#tutorial-button").html("Start Tour");
       $("#tutorial-skip").html("Skip Walkthrough");
     }, 1000);
@@ -634,7 +632,7 @@ $(function() {
 
       setTimeout(function() {
         tTitle.html("Welcome to Casino Monero!");
-        tContent.html('<div class="col-xs-8" style="padding: 0px;">The only Monero raffle that lets you mine your way to the jackpot. </div><div class="col-xs-3 col-xs-offset-1" style="padding: 0px;margin-top: -50px;"><img class="logo" src="/images/common/logo-cm.svg" alt="CasinoXMR"/></div>');
+        tContent.html('<div class="col-8" style="padding: 0px;">The only Monero raffle that lets you mine your way to the jackpot. </div><div class="col-3 offset-1" style="padding: 0px;margin-top: -50px;"><img class="logo" src="/images/common/logo-cm.svg" alt="CasinoXMR"/></div>');
         tButton.html("Start Tour");
         tSkip.html("Skip Walkthrough");
         tSkip.show();

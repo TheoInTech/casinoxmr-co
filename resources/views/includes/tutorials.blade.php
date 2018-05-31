@@ -4,11 +4,11 @@
     <div class="modal-content">
       <div class="modal-body">
         <h5 class="title" id="tutorial-modal-title">Welcome to Casino Monero!</h5>
-        <div class="content" id="tutorial-modal-content">
-          <div class="col-xs-8" style="padding: 0px;">
+        <div class="row content" id="tutorial-modal-content">
+          <div class="col-8" style="padding: 0px;">
             The only Monero raffle that lets you mine your way to the jackpot. 
           </div>
-          <div class="col-xs-3 col-xs-offset-1" style="padding: 0px;margin-top: -50px;">
+          <div class="col-3 offset-1" style="padding: 0px;margin-top: -30px;">
             <img class="logo" src="{{ asset('images/common/logo-cm.svg') }}" alt="CasinoXMR"/>  
           </div>
         </div>  

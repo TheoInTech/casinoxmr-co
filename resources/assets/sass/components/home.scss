@@ -312,12 +312,15 @@
       > .pot-title {
         float: left;
         line-height: 40px;
+        font-weight: 600;
+        
       }
 
       > .pot-value {
         float: right;
-        font-weight: 800;
+        font-weight: 600;
         font-size: 28px;
+        color: $gray-light;
         font-family: $head-font;
       }
     }

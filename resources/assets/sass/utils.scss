@@ -93,10 +93,16 @@
     width: 50px;
     display: inline-block;
     vertical-align: top;
+    margin-right: 10px;
+    margin-left: auto;
   }
 
   > .banner-text {
     display: inline-block;
+    margin-right: auto;
+    color: $white;
+
+    @media #{$phone} { font-size: 14px; }
   }
 
   > .banner-close {
@@ -649,4 +655,12 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 .hide, .none {
   display: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
 }

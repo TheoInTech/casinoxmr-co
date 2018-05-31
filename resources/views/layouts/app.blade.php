@@ -20,6 +20,9 @@
         @include('includes.privacypolicy')
         @include('includes.termsandconditions')
 
+        <input type="hidden" id="raffle-date" value="{{ $nextRaffleDate }}">
+        <input type="hidden" id="current-date" value="{{ $currentDate }}">
+
         <script src="{{ mix('/js/app.min.js') }}"></script>
 
         @yield('scripts')

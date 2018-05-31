@@ -14,23 +14,23 @@
             
               
               <div class="cd-item">
-                <div class="number">12</div>
-                <div class="rep">days</div>
+                <div class="number" id="day-number">--</div>
+                <div class="rep" id="day-rep">days</div>
               </div>
 
               <div class="cd-item">
-                <div class="number">4</div>
-                <div class="rep">hours</div>
+                <div class="number" id="hour-number">--</div>
+                <div class="rep" id="hour-rep">hours</div>
               </div>
 
               <div class="cd-item">
-                <div class="number">32</div>
-                <div class="rep">mins</div>
+                <div class="number" id="minute-number">--</div>
+                <div class="rep" id="minute-rep">minutes</div>
               </div>
 
               <div class="cd-item">
-                <div class="number">24</div>
-                <div class="rep">secs</div>
+                <div class="number" id="second-number">--</div>
+                <div class="rep" id="second-rep">seconds</div>
               </div>
 
 
@@ -39,8 +39,8 @@
             <span class="pot-title text-orange">
               Current pot
             </span>
-            <span class="pot-value text-black">
-              $ 353,000
+            <span class="pot-value">
+              $ {{ $potSize }}
             </span>
           </div>
         </div>

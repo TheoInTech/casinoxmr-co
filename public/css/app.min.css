@@ -12930,10 +12930,20 @@ ul {
   width: 50px;
   display: inline-block;
   vertical-align: top;
+  margin-right: 10px;
+  margin-left: auto;
 }
 
 .top-banner > .banner-text {
   display: inline-block;
+  margin-right: auto;
+  color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .top-banner > .banner-text {
+    font-size: 14px;
+  }
 }
 
 .top-banner > .banner-close, .top-banner > .banner-close:focus, .top-banner > .banner-close:active {
@@ -13506,6 +13516,14 @@ ul {
   display: none;
 }
 
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
 .home-splash {
   background: url("/images/home/bg.svg") no-repeat center bottom;
   background-size: cover;
@@ -13814,12 +13832,14 @@ ul {
 .card.-home .content-pot > .pot-title {
   float: left;
   line-height: 40px;
+  font-weight: 600;
 }
 
 .card.-home .content-pot > .pot-value {
   float: right;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 28px;
+  color: #373F4C;
   font-family: "Abel", sans-serif;
 }
 
@@ -13859,6 +13879,14 @@ ul {
   left: 0;
   top: 10px;
   color: #FFFFFF;
+}
+
+@media (max-width: 640px) {
+  .btn.btn-mine {
+    width: 100px;
+    height: 100px;
+    font-size: 44px;
+  }
 }
 
 .btn.btn-mine:active, .btn.btn-mine:hover, .btn.btn-mine:focus {
@@ -13992,7 +14020,6 @@ ul {
   background: #1C3144;
   text-align: center;
   padding-top: 20px;
-  width: 100px;
 }
 
 @media (max-width: 640px) {
@@ -14018,38 +14045,49 @@ ul {
   }
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item, #sidebar > .sidebar-nav > .nav .nav-logo {
+@media (max-width: 640px) {
+  #sidebar > .sidebar-nav > .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#sidebar > .sidebar-nav > .navbar-nav > .nav-item, #sidebar > .sidebar-nav > .navbar-nav .nav-logo {
   margin: 10px auto;
+  width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 640px) {
-  #sidebar > .sidebar-nav > .nav > .nav-item, #sidebar > .sidebar-nav > .nav .nav-logo {
+  #sidebar > .sidebar-nav > .navbar-nav > .nav-item, #sidebar > .sidebar-nav > .navbar-nav .nav-logo {
     margin: 0px 15px;
     display: inline-block;
   }
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item.active > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo.active > .nav-link {
+#sidebar > .sidebar-nav > .navbar-nav > .nav-item.active > .nav-link, #sidebar > .sidebar-nav > .navbar-nav .nav-logo.active > .nav-link {
   background: #F4F2ED !important;
   color: #F8660A !important;
 }
 
 @media (max-width: 640px) {
-  #sidebar > .sidebar-nav > .nav > .nav-item.active > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo.active > .nav-link {
+  #sidebar > .sidebar-nav > .navbar-nav > .nav-item.active > .nav-link, #sidebar > .sidebar-nav > .navbar-nav .nav-logo.active > .nav-link {
     background: none !important;
   }
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item:hover > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo:hover > .nav-link {
+#sidebar > .sidebar-nav > .navbar-nav > .nav-item:hover > .nav-link, #sidebar > .sidebar-nav > .navbar-nav .nav-logo:hover > .nav-link {
   background-color: transparent;
   color: #FEB250;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-item > .nav-link, #sidebar > .sidebar-nav > .nav .nav-logo > .nav-link {
+#sidebar > .sidebar-nav > .navbar-nav > .nav-item > .nav-link, #sidebar > .sidebar-nav > .navbar-nav .nav-logo > .nav-link {
   color: #FFFFFF;
 }
 
-#sidebar > .sidebar-nav > .nav > .nav-logo {
+#sidebar > .sidebar-nav > .navbar-nav > .nav-logo {
   position: absolute;
   bottom: 25px;
   width: 100%;
@@ -14057,7 +14095,7 @@ ul {
 }
 
 @media (max-width: 640px) {
-  #sidebar > .sidebar-nav > .nav > .nav-logo {
+  #sidebar > .sidebar-nav > .navbar-nav > .nav-logo {
     position: relative;
     bottom: 0;
     width: inherit;
@@ -14067,13 +14105,11 @@ ul {
 .dashboard-content {
   background: #F4F2ED;
   padding: 10px 20px !important;
-  height: 100%;
-  margin-left: 100px;
+  height: 100vh;
 }
 
 @media (max-width: 640px) {
   .dashboard-content {
-    margin-left: 0px;
     margin-top: 100px;
   }
 }
@@ -14114,6 +14150,8 @@ ul {
   text-transform: uppercase;
   margin-right: 10px;
   cursor: pointer;
+  z-index: 1;
+  position: relative;
 }
 
 .dashboard-content > .content {
@@ -14123,7 +14161,7 @@ ul {
 
 .dashboard-content > .content .row.row-graph, .dashboard-content > .content .row.row-panel {
   height: 45vh;
-  padding: 20px 10px 10px;
+  padding: 20px 5px 10px;
 }
 
 .footer {
@@ -14138,14 +14176,14 @@ ul {
   border-top: 2px solid #000;
 }
 
-.panel {
+.card {
   -webkit-box-shadow: 0px 25px 30px #c4c1c1 !important;
           box-shadow: 0px 25px 30px #c4c1c1 !important;
   margin: 5px;
   position: relative;
 }
 
-.panel.-chips {
+.card.-chips {
   height: 30vh;
   min-height: 200px;
   background: transparent;
@@ -14154,42 +14192,68 @@ ul {
           box-shadow: none !important;
 }
 
-.panel.-chips .content-chips {
+.card.-chips .content-chips {
   background: transparent;
 }
 
-.panel.-chips .content-chips > .global-title, .panel.-chips .content-chips .global-body {
+.card.-chips .content-chips > .global-title, .card.-chips .content-chips .global-body {
   color: #000000;
   font-family: "Abel", sans-serif;
 }
 
-.panel.-chips .content-chips .miner-button {
+@media (max-width: 640px) {
+  .card.-chips .content-chips > .global-body {
+    text-align: center;
+  }
+}
+
+.card.-chips .content-chips .miner-button {
   min-width: 90px;
 }
 
-.panel.-chips .content-chips .miner-description {
+@media (max-width: 640px) {
+  .card.-chips .content-chips .miner-button {
+    margin: auto;
+  }
+}
+
+.card.-chips .content-chips .miner-description {
   padding: 0;
   line-height: 34px;
   margin-top: 10px;
   letter-spacing: 1px;
 }
 
-.panel.-chips .content-chips .miner-description > .chip-number {
+@media (max-width: 640px) {
+  .card.-chips .content-chips .miner-description {
+    margin: auto;
+    margin-top: 25px;
+    line-height: 42  px;
+  }
+}
+
+.card.-chips .content-chips .miner-description > .chip-number {
   font-size: 50px;
   font-weight: 600;
 }
 
-.panel.-chips .content-chips .miner-description > .miner-text {
+@media (max-width: 640px) {
+  .card.-chips .content-chips .miner-description > .chip-number {
+    font-size: 36px;
+  }
+}
+
+.card.-chips .content-chips .miner-description > .miner-text {
   font-weight: 600;
   font-size: 18px;
   color: #1E2736;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container {
+.card.-chips .content-chips .miner-description > .speed-container {
   display: none;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .btn-speed {
+.card.-chips .content-chips .miner-description > .speed-container > .btn-speed {
   text-transform: uppercase;
   color: #F8660A;
   font-weight: 600;
@@ -14201,11 +14265,11 @@ ul {
   position: relative;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .btn-speed:hover {
+.card.-chips .content-chips .miner-description > .speed-container > .btn-speed:hover {
   color: #FEB250;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle {
+.card.-chips .content-chips .miner-description > .speed-container > .speed-throttle {
   display: none;
   padding: 8px;
   background: #FFFFFF;
@@ -14216,7 +14280,7 @@ ul {
   border-radius: 3px;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle:before {
+.card.-chips .content-chips .miner-description > .speed-container > .speed-throttle:before {
   bottom: 100%;
   left: 0px;
   border: solid transparent;
@@ -14231,7 +14295,7 @@ ul {
   margin-left: 50px;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle {
+.card.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle {
   background: #FBFBFB;
   border: 1px solid #C8C8C8;
   text-transform: uppercase;
@@ -14244,20 +14308,20 @@ ul {
   border-radius: 0px;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle:hover, .panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle:focus {
+.card.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle:hover, .card.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle:focus {
   background: #FDFDFD;
   border: 1px solid #F8660A;
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
-.panel.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle.active {
+.card.-chips .content-chips .miner-description > .speed-container > .speed-throttle > .btn-throttle.active {
   border: none;
   color: #FFFFFF;
   background: #F8660A;
 }
 
-.panel.-global {
+.card.-global {
   height: 30vh;
   min-height: 200px;
   background: transparent;
@@ -14265,12 +14329,12 @@ ul {
 }
 
 @media (max-width: 1280px) {
-  .panel.-global {
+  .card.-global {
     min-height: 265px;
   }
 }
 
-.panel.-global .content-pot {
+.card.-global .content-pot {
   background: #F8660A;
   height: 18vh;
   min-height: 130px;
@@ -14281,19 +14345,19 @@ ul {
 }
 
 @media (max-width: 1280px) {
-  .panel.-global .content-pot {
+  .card.-global .content-pot {
     min-height: 155px;
   }
 }
 
-.panel.-global .content-pot > .global-body {
+.card.-global .content-pot > .global-body {
   position: absolute;
   width: 94%;
   height: 10vh;
   min-height: 75px;
 }
 
-.panel.-global .content-pot > .global-body > .current-pot {
+.card.-global .content-pot > .global-body > .current-pot {
   font-size: 50px;
   font-weight: 600;
   padding: 0;
@@ -14303,12 +14367,12 @@ ul {
 }
 
 @media (max-width: 1280px) {
-  .panel.-global .content-pot > .global-body > .current-pot {
+  .card.-global .content-pot > .global-body > .current-pot {
     font-size: 40px;
   }
 }
 
-.panel.-global .content-pot > .global-body > .current-equal {
+.card.-global .content-pot > .global-body > .current-equal {
   font-size: 14px;
   font-weight: 600;
   opacity: 0.5;
@@ -14317,48 +14381,49 @@ ul {
   bottom: 20px;
 }
 
-.panel.-global .content-countdown {
+.card.-global .content-countdown {
   background: #F8550A;
   height: 12%;
   min-height: 90px;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   padding: 10px;
+  color: #FFFFFF;
 }
 
 @media (max-width: 1280px) {
-  .panel.-global .content-countdown {
+  .card.-global .content-countdown {
     height: 20%;
     min-height: 110px;
   }
 }
 
-.panel.-global .content-countdown > .icon {
+.card.-global .content-countdown > .icon {
   font-size: 40px;
   display: inline-block;
   margin: 0px 20px;
 }
 
-.panel.-global .content-countdown > .icon > .fa {
+.card.-global .content-countdown > .icon > .fa {
   font-weight: 200;
 }
 
-.panel.-global .content-countdown > .countdown {
+.card.-global .content-countdown > .countdown {
   display: inline-block;
 }
 
-.panel.-global .content-countdown > .countdown .current-countdown {
+.card.-global .content-countdown > .countdown .current-countdown {
   font-size: 26px;
   font-weight: 600;
 }
 
 @media (max-width: 1280px) {
-  .panel.-global .content-countdown > .countdown .current-countdown {
+  .card.-global .content-countdown > .countdown .current-countdown {
     font-size: 20px;
   }
 }
 
-.panel.-payouts {
+.card.-payouts {
   height: 30vh;
   min-height: 200px;
   background: #FFFFFF;
@@ -14366,30 +14431,35 @@ ul {
 }
 
 @media (max-width: 1280px) {
-  .panel.-payouts {
+  .card.-payouts {
     min-height: 285px;
   }
 }
 
-.panel .panel-heading {
+.card .card-header {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   padding: 15px;
   font-weight: 600;
+  background: #FFFFFF;
 }
 
-.panel .panel-body {
+.card .card-body {
   padding: 0px;
 }
 
-.panel .panel-body.-payouts > .body {
+.card .card-body.-payouts {
+  padding: 10px 0px;
+}
+
+.card .card-body.-payouts > .body {
   margin: 10px 15px;
 }
 
-.panel .panel-body.-payouts > .table {
+.card .card-body.-payouts > .table {
   font-size: 14px;
 }
 
-.panel .panel-body.-payouts > .table tbody > tr > td {
+.card .card-body.-payouts > .table tbody > tr > td {
   max-width: 100px;
   white-space: nowrap;
   overflow: hidden;
@@ -14870,6 +14940,7 @@ ul {
   font-size: 18px;
   font-weight: 400;
   color: #1E2736;
+  padding: 15px;
 }
 
 .modal > .modal-dialog > .modal-content > .modal-body .logo {
@@ -14910,6 +14981,7 @@ ul {
   height: 80%;
   text-align: center;
   padding: 50px;
+  z-index: 2;
 }
 
 .error-container .error-icon {

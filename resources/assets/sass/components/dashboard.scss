@@ -26,6 +26,8 @@
   top: 10px;
   color: $white;
 
+  @media #{$phone} { width: 100px; height: 100px; font-size: 44px; }
+
   &:active, &:hover, &:focus {
     color: $white;
   }
@@ -160,7 +162,6 @@
   background: $navy-blue;
   text-align: center;
   padding-top: 20px;
-  width: 100px;
 
   @media #{$phone} {
     width: 100%;
@@ -176,9 +177,14 @@
     margin-top: 8vh;
     @media #{$phone} { margin-top: 0px; text-align: right; }
 
-    > .nav {
+    > .navbar-nav {
+      @media #{$phone} { flex-direction: row; }
+
       > .nav-item, .nav-logo {
         margin: 10px auto;
+        width: 100%;
+        text-align: center;
+
         @media #{$phone} { 
           margin: 0px 15px;
           display: inline-block;
@@ -224,9 +230,8 @@
 .dashboard-content {
   background: $off-white;
   padding: 10px 20px !important;
-  height: 100%;
-  margin-left: 100px;
-  @media #{$phone} { margin-left: 0px; margin-top: 100px; }
+  height: 100vh;
+  @media #{$phone} { margin-top: 100px; }
 
   > .header {
     height: 8vh;
@@ -261,6 +266,8 @@
           text-transform: uppercase;
           margin-right: 10px;
           cursor: pointer;
+          z-index: 1;
+          position: relative;
         }
 
       }
@@ -275,7 +282,7 @@
 
       &.row-graph, &.row-panel {
         height: 45vh;
-        padding: 20px 10px 10px;
+        padding: 20px 5px 10px;
       }
     }
   }
@@ -293,7 +300,7 @@
   border-top: 2px solid #000;
 }
 
-.panel {
+.card {
   box-shadow: 0px 25px 30px #c4c1c1 !important;
   margin: 5px;
   position: relative;
@@ -314,8 +321,13 @@
         font-family: $head-font;
       }
 
+      > .global-body {
+        @media #{$phone} { text-align: center; }
+      }
+
       .miner-button {
         min-width: 90px;
+        @media #{$phone} { margin: auto; }
       }
 
       .miner-description {
@@ -324,10 +336,13 @@
         margin-top: 10px;
         letter-spacing: 1px;
 
+        @media #{$phone} { margin: auto; margin-top: 25px; line-height: 42  px; }
 
         > .chip-number {
           font-size: 50px;
           font-weight: 600;
+
+          @media #{$phone} { font-size: 36px; }
         }
 
         > .miner-text {
@@ -469,6 +484,7 @@
       border-bottom-right-radius: 6px;
       border-bottom-left-radius: 6px;
       padding: 10px;
+      color: $white;
 
       @media #{$netbook} { height: 20%; min-height: 110px; }
 
@@ -504,16 +520,18 @@
 
   }
 
-  .panel-heading {
+  .card-header {
     border-bottom: 2px solid rgba(0,0,0,0.1);
     padding: 15px;
     font-weight: 600;
+    background: $white;
   }
 
-  .panel-body {
+  .card-body {
     padding: 0px;
 
     &.-payouts {
+      padding: 10px 0px;
       > .body {
         margin: 10px 15px;
       }
@@ -953,6 +971,7 @@
           font-size: 18px;
           font-weight: 400;
           color: $gray;
+          padding: 15px;
         }
 
         .logo {

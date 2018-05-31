@@ -18,23 +18,23 @@
             @include('includes.topbanner')
             <div class="row row-offcanvas row-offcanvas-left">
 
-                <aside class="col-xs-12 col-sm-1 sidebar-offcanvas" id="sidebar" role="navigation">
+                <aside class="col-12 col-sm-1" id="sidebar" role="navigation">
                     <div class="sidebar-nav">
-                        <ul class="nav">
-                            <li class="nav-item active">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active col-4 col-sm-12 no-padding no-margin">
                                 <a class="nav-link pl-0" id="nav-main" href="#"><i class="fas fa-th-large fa-2x"></i></a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item col-4 col-sm-12 no-padding no-margin">
                                 <a class="nav-link pl-0" id="nav-transactions" href="#"><i class="fas fa-exchange-alt fa-2x"></a></i>
                             </li>
-                            <li class="nav-logo">
+                            <li class="nav-logo col-4 col-sm-12 no-padding no-margin">
                                 <a class="nav-link pl-0" href="/logout"><i class="fas fa-user fa-2x"></a></i>
                             </li>
                         </ul>
                     </div>
                 </aside>
 
-                <div class="col py-3 dashboard-content">
+                <div class="col-12 offset-0 col-sm-11 offset-sm-1 dashboard-content">
                     <div class="header">
                         <ul class="menu-list">
                             <li class="menu-title">Dashboard</li>

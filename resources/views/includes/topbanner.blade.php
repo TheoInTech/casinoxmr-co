@@ -1,4 +1,4 @@
-<div class="banner row row-offcanvas top-banner" id="keep-open">
+<div class="banner row top-banner" id="keep-open">
 	<img class="banner-img" src="{{ asset('images/common/banner-info.svg') }}" alt="CasinoXMR"/>
 	<span class="banner-text">
 		Keep this page open to maximize chip generation. <br>
