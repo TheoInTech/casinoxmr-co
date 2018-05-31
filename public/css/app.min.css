@@ -12936,7 +12936,7 @@ ul {
 
 @media (max-width: 640px) {
   .top-banner > .banner-img {
-    width: 30px;
+    width: 25px;
   }
 }
 
@@ -12948,8 +12948,8 @@ ul {
 
 @media (max-width: 640px) {
   .top-banner > .banner-text {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 10px;
+    margin-top: 10px;
   }
 }
 

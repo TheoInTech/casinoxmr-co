@@ -96,7 +96,7 @@
     margin-right: 10px;
     margin-left: auto;
 
-    @media #{$phone} { width: 30px; }
+    @media #{$phone} { width: 25px; }
   }
 
   > .banner-text {
@@ -104,7 +104,7 @@
     margin-right: auto;
     color: $white;
 
-    @media #{$phone} { font-size: 12px; margin-top: 5px; }
+    @media #{$phone} { font-size: 10px; margin-top: 10px; }
   }
 
   > .banner-close {
