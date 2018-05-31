@@ -13771,6 +13771,12 @@ ul {
   text-align: center;
 }
 
+@media (max-width: 1280px) {
+  .card.-home .content-countdown {
+    min-height: 150px;
+  }
+}
+
 .card.-home .content-countdown > .card-title {
   font-weight: 600;
   display: block;
@@ -13791,6 +13797,12 @@ ul {
   }
 }
 
+@media (max-width: 640px) {
+  .card.-home .content-countdown > .cd-item {
+    min-width: 55px;
+  }
+}
+
 .card.-home .content-countdown > .cd-item > .number {
   font-weight: 600;
   font-size: 36px;
@@ -13803,6 +13815,12 @@ ul {
   }
 }
 
+@media (max-width: 640px) {
+  .card.-home .content-countdown > .cd-item > .number {
+    font-size: 24px;
+  }
+}
+
 .card.-home .content-countdown > .cd-item > .rep {
   color: #747678;
   font-size: 16px;
@@ -13811,7 +13829,13 @@ ul {
 
 @media (max-width: 1280px) {
   .card.-home .content-countdown > .cd-item > .rep {
-    font-size: 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .card.-home .content-countdown > .cd-item > .rep {
+    font-size: 10px;
   }
 }
 
