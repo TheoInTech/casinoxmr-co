@@ -9,6 +9,8 @@
   color: $white;
   z-index: 999;
 
+  @media #{$netbook} { padding: 10px 20px; }
+
   a {
     color: $white;
     margin: 10px;
@@ -18,7 +20,7 @@
       text-decoration: none;
     }    
 
-    @media #{$phone} { margin-left: 0; }
+    @media #{$netbook} { margin-left: 0; }
   }
 
   ul {

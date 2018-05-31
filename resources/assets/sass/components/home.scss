@@ -7,7 +7,7 @@
     height: 65vh;
     width: 100%;
     position: relative;
-    padding: 50px 150px;
+    padding: 60px 150px;
     border: none;
     min-height: 350px;
 
@@ -68,6 +68,7 @@
     z-index: 1;
 
     @media #{$netbook} { padding: 60px 20px; position: relative; bottom: -50vh; }
+    @media #{$phone} { padding: 40px 20px; position: relative; bottom: -50vh; }
 
     > .main-container {
       transform: skewY(-4deg);
@@ -87,6 +88,7 @@
       text-transform: uppercase;
 
       @media #{$netbook} { font-size: 12px; }
+      @media #{$phone} { display: block; }
 
       &:hover {
         opacity: 0.8;
@@ -96,20 +98,25 @@
 
     .cm-form {
       width: 600px;
+
       @media #{$netbook} { height: 120px; margin: auto; }
+      @media #{$phone} { width: 100%; margin-bottom: 20px; }
 
       > .input-group {
-        margin: auto;
+        @media #{$phone} { display: block; }
 
         .cm-input {
           height: 60px;
+          @media #{$phone} { width: 100%; }
         }
 
         .cm-btn {
           height: 60px; 
           width: 200px;
-        }  
-      }
+          @media #{$phone} { width: 100%; }
+        }
+      }  
+      
     }
   }
 

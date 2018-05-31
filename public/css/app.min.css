@@ -13532,7 +13532,7 @@ ul {
   height: 65vh;
   width: 100%;
   position: relative;
-  padding: 50px 150px;
+  padding: 60px 150px;
   border: none;
   min-height: 350px;
 }
@@ -13613,6 +13613,14 @@ ul {
   }
 }
 
+@media (max-width: 640px) {
+  .section.-address {
+    padding: 40px 20px;
+    position: relative;
+    bottom: -50vh;
+  }
+}
+
 .section.-address > .main-container {
   -webkit-transform: skewY(-4deg);
           transform: skewY(-4deg);
@@ -13642,6 +13650,12 @@ ul {
   }
 }
 
+@media (max-width: 640px) {
+  .section.-address .mymonero {
+    display: block;
+  }
+}
+
 .section.-address .mymonero:hover {
   opacity: 0.8;
   text-decoration: none;
@@ -13658,17 +13672,38 @@ ul {
   }
 }
 
-.section.-address .cm-form > .input-group {
-  margin: auto;
+@media (max-width: 640px) {
+  .section.-address .cm-form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section.-address .cm-form > .input-group {
+    display: block;
+  }
 }
 
 .section.-address .cm-form > .input-group .cm-input {
   height: 60px;
 }
 
+@media (max-width: 640px) {
+  .section.-address .cm-form > .input-group .cm-input {
+    width: 100%;
+  }
+}
+
 .section.-address .cm-form > .input-group .cm-btn {
   height: 60px;
   width: 200px;
+}
+
+@media (max-width: 640px) {
+  .section.-address .cm-form > .input-group .cm-btn {
+    width: 100%;
+  }
 }
 
 .section.-instruction {
@@ -15106,6 +15141,12 @@ a.navbar-brand > img {
   z-index: 999;
 }
 
+@media (max-width: 1280px) {
+  .cm-footer {
+    padding: 10px 20px;
+  }
+}
+
 .cm-footer a {
   color: #FFFFFF;
   margin: 10px;
@@ -15116,7 +15157,7 @@ a.navbar-brand > img {
   text-decoration: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1280px) {
   .cm-footer a {
     margin-left: 0;
   }
