@@ -95,6 +95,8 @@
     vertical-align: top;
     margin-right: 10px;
     margin-left: auto;
+
+    @media #{$phone} { width: 30px; }
   }
 
   > .banner-text {
@@ -102,7 +104,7 @@
     margin-right: auto;
     color: $white;
 
-    @media #{$phone} { font-size: 14px; }
+    @media #{$phone} { font-size: 12px; margin-top: 5px; }
   }
 
   > .banner-close {
@@ -115,6 +117,8 @@
       opacity: 1;
       font-weight: 400;
       font-size: 40px;  
+
+      @media #{$phone} { right: 0px; }
     }
     
     &:hover {
@@ -550,6 +554,8 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
     & {
       list-style: none;
       padding: 0px;
+
+      @media #{$phone} { text-align: center; }
     }
   }
 }

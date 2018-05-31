@@ -284,6 +284,12 @@
         height: 45vh;
         padding: 20px 5px 10px;
       }
+
+      &.row-panel {
+        > .-payouts {
+          @media #{$phone} { margin-top: 20px; }
+        }
+      }
     }
   }
 }
@@ -473,6 +479,8 @@
           position: absolute;
           right: 25px;
           bottom: 20px;
+
+          @media #{$netbook} { bottom: -15px; }
         }
       }     
     }
@@ -486,12 +494,14 @@
       padding: 10px;
       color: $white;
 
-      @media #{$netbook} { height: 20%; min-height: 110px; }
+      @media #{$netbook} { height: 20%; min-height: 130px; padding: 0px 25px; }
 
       > .icon {
         font-size: 40px;
         display: inline-block;
         margin: 0px 20px;
+
+        @media #{$netbook} { display: none; }
 
         > .fa {
           font-weight: 200;
@@ -502,7 +512,7 @@
         display: inline-block;
 
         .current-countdown {
-          @media #{$netbook} { font-size: 20px; }
+          @media #{$phone} { font-size: 20px; }
           font-size: 26px;
           font-weight: 600;
         }
@@ -961,6 +971,8 @@
         min-height: 150px;
         background: #F3F3F3;
 
+        @media #{$phone} { min-height: 100px; }
+
         .title {
           font-size: 24px;
           font-weight: 600;
@@ -972,11 +984,15 @@
           font-weight: 400;
           color: $gray;
           padding: 15px;
+
+          @media #{$phone} { font-size: 16px; }
         }
 
         .logo {
           width: 100%;
           margin: 20px auto;
+
+          @media #{$phone} { margin-top: 50px; }
         }
       }
     }

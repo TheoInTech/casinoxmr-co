@@ -12934,6 +12934,12 @@ ul {
   margin-left: auto;
 }
 
+@media (max-width: 640px) {
+  .top-banner > .banner-img {
+    width: 30px;
+  }
+}
+
 .top-banner > .banner-text {
   display: inline-block;
   margin-right: auto;
@@ -12942,7 +12948,8 @@ ul {
 
 @media (max-width: 640px) {
   .top-banner > .banner-text {
-    font-size: 14px;
+    font-size: 12px;
+    margin-top: 5px;
   }
 }
 
@@ -12954,6 +12961,12 @@ ul {
   opacity: 1;
   font-weight: 400;
   font-size: 40px;
+}
+
+@media (max-width: 640px) {
+  .top-banner > .banner-close, .top-banner > .banner-close:focus, .top-banner > .banner-close:active {
+    right: 0px;
+  }
 }
 
 .top-banner > .banner-close:hover {
@@ -13403,6 +13416,12 @@ ul {
 .alert > .list, .alert.alert-danger > .list {
   list-style: none;
   padding: 0px;
+}
+
+@media (max-width: 640px) {
+  .alert > .list, .alert.alert-danger > .list {
+    text-align: center;
+  }
 }
 
 .alert.-profile {
@@ -14214,6 +14233,12 @@ ul {
   padding: 20px 5px 10px;
 }
 
+@media (max-width: 640px) {
+  .dashboard-content > .content .row.row-panel > .-payouts {
+    margin-top: 20px;
+  }
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -14431,6 +14456,12 @@ ul {
   bottom: 20px;
 }
 
+@media (max-width: 1280px) {
+  .card.-global .content-pot > .global-body > .current-equal {
+    bottom: -15px;
+  }
+}
+
 .card.-global .content-countdown {
   background: #F8550A;
   height: 12%;
@@ -14444,7 +14475,8 @@ ul {
 @media (max-width: 1280px) {
   .card.-global .content-countdown {
     height: 20%;
-    min-height: 110px;
+    min-height: 130px;
+    padding: 0px 25px;
   }
 }
 
@@ -14452,6 +14484,12 @@ ul {
   font-size: 40px;
   display: inline-block;
   margin: 0px 20px;
+}
+
+@media (max-width: 1280px) {
+  .card.-global .content-countdown > .icon {
+    display: none;
+  }
 }
 
 .card.-global .content-countdown > .icon > .fa {
@@ -14467,7 +14505,7 @@ ul {
   font-weight: 600;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 640px) {
   .card.-global .content-countdown > .countdown .current-countdown {
     font-size: 20px;
   }
@@ -14980,6 +15018,12 @@ ul {
   background: #F3F3F3;
 }
 
+@media (max-width: 640px) {
+  .modal > .modal-dialog > .modal-content > .modal-body {
+    min-height: 100px;
+  }
+}
+
 .modal > .modal-dialog > .modal-content > .modal-body .title {
   font-size: 24px;
   font-weight: 600;
@@ -14993,9 +15037,21 @@ ul {
   padding: 15px;
 }
 
+@media (max-width: 640px) {
+  .modal > .modal-dialog > .modal-content > .modal-body .content {
+    font-size: 16px;
+  }
+}
+
 .modal > .modal-dialog > .modal-content > .modal-body .logo {
   width: 100%;
   margin: 20px auto;
+}
+
+@media (max-width: 640px) {
+  .modal > .modal-dialog > .modal-content > .modal-body .logo {
+    margin-top: 50px;
+  }
 }
 
 .modal .modal-footer {

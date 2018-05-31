@@ -44,7 +44,7 @@
   </div>
     
   <div class="row row-panel">
-    <div class="col-12 col-sm-6 panel-padding">
+    <div class="col-12 col-sm-6 panel-padding -pot">
       <div class="card -global">
         <div class="card-body -global">
           <div class="content-pot">
@@ -60,7 +60,7 @@
           </div>
         </div>
 
-        <div class="card-footer content-countdown">
+        <div class="card-footer content-countdown -payouts">
           <div class="icon">
             <i class="fa fa-clock"></i>
           </div>

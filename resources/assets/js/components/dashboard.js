@@ -309,9 +309,9 @@ $(function() {
     seconds = parseInt(timeRemaining);
 
     clock.html(('0' + days).slice(-2) + ' days, ' +
-                ('0' + hours).slice(-2) + ' hours, ' +
-                ('0' + minutes).slice(-2) + ' minutes, ' +
-                ('0' + seconds).slice(-2) + ' seconds ');
+                ('0' + hours).slice(-2) + ' hrs, ' +
+                ('0' + minutes).slice(-2) + ' mins, ' +
+                ('0' + seconds).slice(-2) + ' secs ');
   
     currentDate.setSeconds( currentDate.getSeconds() + 1 );
   }
@@ -571,7 +571,7 @@ $(function() {
         toggle.click();
       }
       toggle.css({'z-index':'9999', 'box-shadow':'0px 0px 40px rgba(0,0,0,0.6)'});
-      // tDialog.attr('style', '-webkit-transform:translate(-45%, 40%) !important;-ms-transform:translate(-45%, 40%) !important;transform:translate(-45%, 40%) !important');
+      tDialog.attr('style', '-webkit-transform:translate(0%, 0%) !important;-ms-transform:translate(0%, 0%) !important;transform:translate(0%, 0%) !important');
 
       tTitle.html("Mining button");
       tContent.html("We've started the miner for you to generate raffle chips right away. However, if you wish to pause the miner, you can do so through this Play/Pause button.");
@@ -587,7 +587,7 @@ $(function() {
       toggle.css({'z-index':'1', 'box-shadow':'none'});
       tSpeed.css({'z-index':'9999'});
       tThrottle.css({'z-index':'9999', 'box-shadow':'0px 0px 40px rgba(0,0,0,0.6)'});
-      tDialog.attr('style', '-webkit-transform:translate(0%, 0%) !important;-ms-transform:translate(0%, 0%) !important;transform:translate(0%, 0%) !important');
+      // tDialog.attr('style', '-webkit-transform:translate(0%, 0%) !important;-ms-transform:translate(0%, 0%) !important;transform:translate(0%, 0%) !important');
 
       tTitle.html("Adjusting mining power");
       tContent.html("You can adjust the rate of generating raffle chips from the miner. The higher CPU power you allot, the more chances you earn to win the jackpot.");
