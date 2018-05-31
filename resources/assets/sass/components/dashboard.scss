@@ -387,6 +387,14 @@
               box-shadow: 0px 5px 5px #9d9b9b;
               position: absolute;
               border-radius:  3px;
+              z-index: 999;
+
+              @media #{$phone} { 
+                margin-left: 20px;
+                margin-right: 20px;
+                left: 0;
+                right: 0;
+              }              
             }
 
             &:before {
@@ -403,6 +411,12 @@
               border-width: 10px;
               margin-left: 50px;
 
+              @media #{$phone} { 
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+              }
             }
 
             > .btn-throttle {
@@ -494,7 +508,7 @@
       padding: 10px;
       color: $white;
 
-      @media #{$netbook} { height: 20%; min-height: 130px; padding: 25px; }
+      @media #{$netbook} { height: 20%; min-height: 110px; padding: 25px; }
 
       > .icon {
         font-size: 40px;
