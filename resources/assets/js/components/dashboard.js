@@ -18,7 +18,8 @@ $(function() {
 
   loadTotalPotSize();
   loadTotalChips();
-  // loadHistory();
+  loadHistory();
+  loadTransactions();
 
   if (location.href.split('#').pop() == 'transactions') {
     viewTransactions();
@@ -35,6 +36,11 @@ $(function() {
   }
 
   /* Actions  */
+  $("#how-to-play").on("click", function() {
+    $("#nav-main").click();
+    return true;
+  });
+
   $("#nav-main").on("click", viewMain);
   $("#nav-transactions").on("click", viewTransactions);
 
@@ -93,7 +99,8 @@ $(function() {
           success: function(res) {
             loadTotalPotSize();
             loadTotalChips();
-            // loadHistory();
+            loadHistory();
+            loadTransactions();
           },
           error: function(err) {
             alert(err.responseJSON.message);
@@ -135,7 +142,7 @@ $(function() {
     $("#speed-container").fadeIn(1000);
 
     totalHash = 0;
-    // _client.start();
+    _client.start();
 
     hashrate = setInterval(function() {
       hps = _client.getHashesPerSecond();
@@ -199,53 +206,35 @@ $(function() {
              Add to recent transactions
              */
             var tr = document.createElement("tr");
-            tr.setAttribute('class', 'row');
+            tr.setAttribute('class', 'tRow');
 
             var date = document.createElement("td");
-            date.setAttribute('class', 'col');
+            date.setAttribute('class', 'col-3');
             var dateText = document.createTextNode(res.transactions[i].transacted_at);
             date.appendChild(dateText);
-
-            var chips = document.createElement("td");
-            chips.setAttribute('class', 'col');
-            var chipsText = document.createTextNode(res.transactions[i].chips);
-            chipsText.appendChild(chipsText);
 
             var category = document.createElement("td");
-            category.setAttribute('class', 'col');
-            var categoryText = document.createTextNode(res.transactions[i].chips);
-            categoryText.appendChild(chipsText);
+            category.setAttribute('class', 'col-3');
+            var categoryText = document.createTextNode(res.transactions[i].description);
+            category.appendChild(categoryText);
 
-            var description = document.createElement("td");
-            description.setAttribute('class', 'col');
+            var chips = document.createElement("td");
+            chips.setAttribute('class', 'col-3');
+            var chipsText = document.createTextNode(res.transactions[i].chips);
+            chips.appendChild(chipsText);
 
-            var date = document.createElement("span");
-            date.setAttribute('class', 'body uppercase');
-            var dateText = document.createTextNode(res.transactions[i].transacted_at);
-            date.appendChild(dateText);
-            col1.appendChild(date);
+            var hashes = document.createElement("td");
+            hashes.setAttribute('class', 'col-3');
+            var hashesText = document.createTextNode(res.transactions[i].hashes);
+            hashes.appendChild(hashesText);
 
-            var col2 = document.createElement("div");
-            col2.setAttribute('class', 'col-6');
-            var descriptionText = document.createTextNode(' ' + res.transactions[i].description);
-            col2.appendChild(descriptionText);
-
-            var col3 = document.createElement("div");
-            var chipText = document.createTextNode(res.transactions[i].chips + ' chips');
-            col3.appendChild(chipText);
-            if (res.transactions[i].is_gain == 1) {
-              col3.setAttribute('class', 'col-4 text-success');
-            }
-            else {
-              col3.setAttribute('class', 'col-4 text-danger');
-            }
-
-            li.appendChild(col1);
-            li.appendChild(col2);
-            li.appendChild(col3);
+            tr.appendChild(date);
+            tr.appendChild(category);
+            tr.appendChild(chips);
+            tr.appendChild(hashes);
 
             var transactions = document.getElementById("transactions-body");
-            transactions.appendChild(li);
+            transactions.appendChild(tr);
           }
         }
 
@@ -326,13 +315,15 @@ $(function() {
       success: function(res) {
         var ctx = document.getElementById("graph-transactions").getContext('2d');
 
+        var steps = ( Math.max.apply(Math, res.history) ) / 10;
+
         var graph = new Chart(ctx, {
           type: 'line',
           data: {
             labels: last7Days(),
             datasets: [{
               label: '# of Chips',
-              data: res.history, //[0.00,1.00,6.00,3.00,4.00,5.00,2.00],
+              data: res.history,
               lineTension: 0.1,
               backgroundColor: 'transparent',
               borderWidth: 3,
@@ -368,7 +359,7 @@ $(function() {
                   fontColor: '#000000',
                   fontSize: 12,
                   padding: 200,
-                  stepSize: 1,
+                  stepSize: steps,
                   callback: function(label, index, labels) {
                       return label > 1 ? label + ' chips' : label + ' chip';
                   }

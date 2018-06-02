@@ -29,13 +29,37 @@ trait Getters {
         $this->next = Carbon::parse('next Monday 12:00:00 am');
     }
 
+    public function getExchange() {
+        return $this->exchange;
+    }
+
+    public function setExchange($exchange) {
+        $this->exchange = $exchange;
+    }
+
+    public function getLast() {
+        return $this->last;
+    }
+
+    public function setLast($last) {
+        $this->last = $last;
+    }
+
+    public function getNext() {
+        return $this->next;
+    }
+
+    public function setNext($next) {
+        $this->next = $next;
+    }
+
     public function getTransactions($take = 10) {
         $user = Auth::user();
         
         // TODO: get sums
         $transactions = $user->transactions()
             ->join('categories_ref as cr', 'cr.id', 'transactions.category_id')
-            ->select('transactions.*','cr.name as name')
+            ->select('transactions.*','cr.name as name','cr.description as description')
             ->whereBetween('transactions.created_at', [Carbon::parse('last week'), Carbon::now()])
             ->orderBy('transactions.created_at', 'desc')
             ->get();
@@ -80,8 +104,8 @@ trait Getters {
         return json_encode([
             'USDEqual'    => $this->exchange[0]->price_usd,
             'exchange'      => array(
-                'usd' => number_format($usd, 2, '.', ','),
-                'xmr' => number_format($xmr, 5, '.', ',')
+                'usd' => round($usd, 2),
+                'xmr' => round($xmr, 2)
             ),
             'totalPotSize'  => number_format($totalPotSize, 2, '.', ','),
             'pot'           => $pot
@@ -130,13 +154,15 @@ trait Getters {
                         ->where('transactions.created_at', '>=', $ago6)
                         ->get();
 
-        $days0 = number_format($history->where('created_at', '>=', $ago0)->sum('chips'), 2, '.', '');
-        $days1 = number_format($history->where('created_at', '>=', $ago1)->where('created_at', '<', $ago0)->sum('chips'), 2, '.', '');
-        $days2 = number_format($history->where('created_at', '>=', $ago2)->where('created_at', '<', $ago1)->sum('chips'), 2, '.', '');
-        $days3 = number_format($history->where('created_at', '>=', $ago3)->where('created_at', '<', $ago2)->sum('chips'), 2, '.', '');
-        $days4 = number_format($history->where('created_at', '>=', $ago4)->where('created_at', '<', $ago3)->sum('chips'), 2, '.', '');
-        $days5 = number_format($history->where('created_at', '>=', $ago5)->where('created_at', '<', $ago4)->sum('chips'), 2, '.', '');
-        $days6 = number_format($history->where('created_at', '>=', $ago6)->where('created_at', '<', $ago5)->sum('chips'), 2, '.', '');
+        $collect = collect($history);
+
+        $days0 = number_format($collect->where('created_at', '>=', $ago0)->sum('chips'), 2, '.', '');
+        $days1 = number_format($collect->where('created_at', '>=', $ago1)->where('created_at', '<', $ago0)->sum('chips'), 2, '.', '');
+        $days2 = number_format($collect->where('created_at', '>=', $ago2)->where('created_at', '<', $ago1)->sum('chips'), 2, '.', '');
+        $days3 = number_format($collect->where('created_at', '>=', $ago3)->where('created_at', '<', $ago2)->sum('chips'), 2, '.', '');
+        $days4 = number_format($collect->where('created_at', '>=', $ago4)->where('created_at', '<', $ago3)->sum('chips'), 2, '.', '');
+        $days5 = number_format($collect->where('created_at', '>=', $ago5)->where('created_at', '<', $ago4)->sum('chips'), 2, '.', '');
+        $days6 = number_format($collect->where('created_at', '>=', $ago6)->where('created_at', '<', $ago5)->sum('chips'), 2, '.', '');
 
         return array($days6, $days5, $days4, $days3, $days2, $days1, $days0);
     }
