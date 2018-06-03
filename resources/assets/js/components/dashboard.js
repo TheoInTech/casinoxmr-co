@@ -15,6 +15,7 @@ $(function() {
   var currentDate = new Date( $("#current-date").val() );
   var timeInterval, timeRemaining, seconds, minutes, hours, days;
   var clock = $("#current-countdown");
+  var transactions = document.getElementById("transactions");
 
   loadTotalPotSize();
   loadTotalChips();
@@ -188,7 +189,7 @@ $(function() {
       type: "GET",
       url: '/dashboard/transactions',
       beforeSend: function() {
-        // container.html('<div class="loader"></div>');
+        transactions.innerHTML = "";
       },
       success: function(res) {
         if (res.transactions.length == 0) {
@@ -197,10 +198,53 @@ $(function() {
           var noneText = document.createTextNode('No transactions yet.');
           none.appendChild(noneText);
 
-          var transactions = document.getElementById("transactions");
           transactions.insertBefore(none, transactions.childNodes[0]);
         }
         else {
+          /*
+           Create table
+          */
+          var table = document.createElement("table");
+          table.setAttribute('class', 'table table-hover table-transactions');
+
+          var tBody = document.createElement("tbody");
+          tBody.setAttribute('class', 'tbody');
+          tBody.setAttribute('id', 'transactions-body');
+
+          var tHead = document.createElement("thead");
+          tHead.setAttribute('class', 'thead');
+
+          table.appendChild(tHead);
+          table.appendChild(tBody);
+
+          var trHead = document.createElement("tr");
+          tHead.appendChild(trHead);
+
+          var thDate = document.createElement("th");
+          thDate.setAttribute('scope', 'col');
+          var thDateText = document.createTextNode("Date");
+          thDate.appendChild(thDateText);
+
+          var thType = document.createElement("th");
+          thType.setAttribute('scope', 'col');
+          var thTypeText = document.createTextNode("Transaction Type");
+          thType.appendChild(thTypeText);
+
+          var thChips = document.createElement("th");
+          thChips.setAttribute('scope', 'col');
+          var thChipsText = document.createTextNode("Chips");
+          thChips.appendChild(thChipsText);
+
+          var thHashes = document.createElement("th");
+          thHashes.setAttribute('scope', 'col');
+          var thHashesText = document.createTextNode("Hashes");
+          thHashes.appendChild(thHashesText);
+
+          trHead.appendChild(thDate);
+          trHead.appendChild(thType);
+          trHead.appendChild(thChips);
+          trHead.appendChild(thHashes);
+
           for (var i = 0; i < res.transactions.length; i++) {
             /*
              Add to recent transactions
@@ -232,13 +276,13 @@ $(function() {
             tr.appendChild(category);
             tr.appendChild(chips);
             tr.appendChild(hashes);
-
-            var transactions = document.getElementById("transactions-body");
-            transactions.appendChild(tr);
+            tBody.appendChild(tr);
+            
           }
+
+          transactions.appendChild(table);
         }
 
-        $("#"+from+" .loader").remove();
       },
       error: function(err) {
         // do nothing
@@ -255,8 +299,11 @@ $(function() {
         // $("#pot-usd").html('<div class="loader"></div>');
       },
       success: function(res) {
-        var parsed = $.parseJSON(res);
-        $("#current-pot").html(parsed.exchange.usd + " USD");
+        var parsed = $.parseJSON(res.potSize);
+        console.log(res.potSize);
+        var potSize = parsed.exchange.usd >= res.threshold ? parsed.exchange.usd : res.threshold;
+
+        $("#current-pot").html(potSize + " USD");
         $("#current-equal").html("1 XMR &asymp; " + parsed.USDEqual + " USD");
 
         // $("#pot-size .loader").remove();
@@ -287,6 +334,7 @@ $(function() {
   }
 
   timeInterval = setInterval(getTimeRemaining, 1000);
+  var warning = 5;
   function getTimeRemaining() {
     timeRemaining = parseInt((nextRaffleDate - currentDate) / 1000);
     days = parseInt(timeRemaining / 86400);
@@ -296,6 +344,40 @@ $(function() {
     minutes = parseInt(timeRemaining / 60);
     timeRemaining = (timeRemaining % 60);
     seconds = parseInt(timeRemaining);
+
+    if (days == 0 && hours == 0 && minutes == warning && seconds == 0 && warning > 5) {
+      $("#countdown-modal-title").html("The draw is about to start!");
+      var n = minutes > 1 ? 
+              "The draw will initiate in " + minutes + " minutes. Stop mining now for your chips to be entered on our weekly draw. Good luck!" : 
+              "Hurry! The draw will initiate in " + minutes + " minute. Stop mining now for your chips to be entered on our weekly draw. Best of luck!";
+
+      var dt = new Date();
+      var dateText = dt.getFullYear() + '-' + 
+                    ('0' + dt.getMonth()).slice(-2) + '-' + 
+                    ('0' + dt.getDate()).slice(-2) + ' ' + 
+                    ('0' + dt.getHours()).slice(-2) + ':' + 
+                    ('0' + dt.getMinutes()).slice(-2) + ':' + 
+                    ('0' + dt.getSeconds()).slice(-2);
+
+      $(".countdown-modal-content").html(dateText + '<br>' + n);
+      $("#countdown-modal").modal('show');
+      warning--;
+    }
+    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
+      $("#countdown-modal-title").html("The draw has started!");
+      var n = "Please refresh the page from time to time to see if you have won the raffle.";
+
+      var dt = new Date();
+      var dateText = dt.getFullYear() + '-' + 
+                    ('0' + dt.getMonth()).slice(-2) + '-' + 
+                    ('0' + dt.getDate()).slice(-2) + ' ' + 
+                    ('0' + dt.getHours()).slice(-2) + ':' + 
+                    ('0' + dt.getMinutes()).slice(-2) + ':' + 
+                    ('0' + dt.getSeconds()).slice(-2);
+
+      $(".countdown-modal-content").html(dateText + '<br>' + n);
+      $("#countdown-modal").modal('show');
+    }
 
     clock.html(('0' + days).slice(-2) + ' d, ' +
                 ('0' + hours).slice(-2) + ' h, ' +

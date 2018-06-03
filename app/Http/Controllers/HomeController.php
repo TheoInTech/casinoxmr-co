@@ -27,9 +27,11 @@ class HomeController extends Controller
         }
 
         $pot = json_decode($this->getTotalPotSize());
+        $threshold = Config::get('prizes.threshold');
+        $potSize = $pot->exchange->usd >= $threshold ? $pot->exchange->usd : $threshold;
 
         return view('pages.index')->with([
-            'potSize'       => $pot->exchange->usd,
+            'potSize'       => $potSize,
             'nextRaffleDate'=> $this->getNextRaffle(),
             'currentDate'   => Carbon::now()->format('Y-m-d\TH:i:s.uP')
         ]);

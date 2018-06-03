@@ -50,13 +50,13 @@ class RaffleDraw extends Command
     public function handle()
     {
         $client = new Client();
-        // $exchange = json_decode(
-        //     $client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents()
-        // );
+        $exchange = json_decode(
+            $client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents()
+        );
 
-        $exchange[0] = json_decode(json_encode(array(
-            'price_usd' => 231.00
-        )));
+        // $exchange[0] = json_decode(json_encode(array(
+        //     'price_usd' => 231.00
+        // )));
         $lastGetters = Carbon::parse('last Monday 12:00:01 am');
         $nextGetters = Carbon::parse('next Monday 12:00:00 am');
 

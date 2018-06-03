@@ -56,6 +56,25 @@
 
         @include('includes.tutorials')
 
+        <!-- Countdown modal -->
+        <div class="modal fade" id="countdown-modal" tabindex="-1" role="dialog" aria-labelledby="countdown-modal-title" aria-hidden="true" data-current="intro">
+          <div class="modal-dialog" role="document" id="countdown-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h5 class="title" id="countdown-modal-title"></h5>
+                <div class="row content" id="countdown-modal-content">
+                  <div class="col-12 countdown-modal-content" style="padding: 0px;">
+
+                  </div>
+                </div>  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="tutorial-skip">Got it!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {{ csrf_field() }}
 
         <input type="hidden" id="coinimp-script" value="{{ Config::get('coinimp.script') }}">

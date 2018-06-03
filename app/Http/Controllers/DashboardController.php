@@ -179,7 +179,11 @@ class DashboardController extends Controller
     }
 
     public function potSize() {
-        return response()->json($this->getTotalPotSize(), 200);
+        $data = [
+            'potSize'   => $this->getTotalPotSize(),
+            'threshold' => Config::get('prizes.threshold')
+        ];
+        return response()->json($data, 200);
     }
 
     public function chips() {
