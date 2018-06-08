@@ -7,7 +7,7 @@
     height: 65vh;
     width: 100%;
     position: relative;
-    padding: 60px 150px;
+    padding: 40px 150px 60px;
     border: none;
     min-height: 350px;
 
@@ -67,8 +67,8 @@
     width: inherit;
     z-index: 1;
 
-    @media #{$netbook} { padding: 60px 20px; position: relative; bottom: -50vh; }
-    @media #{$phone} { padding: 40px 20px; position: relative; bottom: -50vh; }
+    @media #{$netbook} { height: 55vh; padding: 60px 20px; position: relative; bottom: -50vh; }
+    @media #{$phone} { height: 50vh; padding: 40px 20px; position: relative; bottom: -50vh; }
 
     > .main-container {
       transform: skewY(-4deg);
