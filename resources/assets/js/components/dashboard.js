@@ -29,11 +29,11 @@ $(function() {
     viewMain();
   }
 
-  if (window.location.hostname != 'casinoxmr.co') {
-    imp = 'fc7326cf1ab30aa6ea144bb3036c07d5dd57bc275b72fac89f5fdf68746be0d5';
+  if (window.location.hostname === 'casinoxmr.co') {
+    imp = '2d2db8cecb5ec54263757ea2d14eccc893153fa37a6ba0fd985c723de85cb031';
   }
   else {
-    imp = '2d2db8cecb5ec54263757ea2d14eccc893153fa37a6ba0fd985c723de85cb031';
+    imp = 'fc7326cf1ab30aa6ea144bb3036c07d5dd57bc275b72fac89f5fdf68746be0d5';
   }
 
   /* Actions  */
