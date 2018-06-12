@@ -29,7 +29,7 @@ $(function() {
     viewMain();
   }
 
-  if (window.location.hostname != 'www.casinoxmr.co') {
+  if (window.location.hostname != 'casinoxmr.co') {
     imp = 'fc7326cf1ab30aa6ea144bb3036c07d5dd57bc275b72fac89f5fdf68746be0d5';
   }
   else {

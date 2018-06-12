@@ -79,7 +79,7 @@ class DashboardController extends Controller
         $key = $request['key'];
 
         if (
-            ($host == 'www.casinoxmr.co' && $key != '2d2db8cecb5ec54263757ea2d14eccc893153fa37a6ba0fd985c723de85cb031') ||
+            ($host == 'casinoxmr.co' && $key != '2d2db8cecb5ec54263757ea2d14eccc893153fa37a6ba0fd985c723de85cb031') ||
             ($host == '127.0.0.1' && $key != 'fc7326cf1ab30aa6ea144bb3036c07d5dd57bc275b72fac89f5fdf68746be0d5') ||
             ($host == 'localhost' && $key != 'fc7326cf1ab30aa6ea144bb3036c07d5dd57bc275b72fac89f5fdf68746be0d5')
         ) {
