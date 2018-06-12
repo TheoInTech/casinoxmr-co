@@ -85,7 +85,6 @@ $(function() {
       });
 
      _client.on('close', function() {
-        // Call ajax to log the hashes to database
         stopMiner();
         $.ajax({
           type: "POST",
@@ -104,7 +103,7 @@ $(function() {
             loadTransactions();
           },
           error: function(err) {
-            alert(err.responseJSON.message);
+            // do nothing
           }
         });
       });
@@ -300,7 +299,6 @@ $(function() {
       },
       success: function(res) {
         var parsed = $.parseJSON(res.potSize);
-        console.log(res.potSize);
         var potSize = parsed.exchange.usd >= res.threshold ? parsed.exchange.usd : res.threshold;
 
         $("#current-pot").html(potSize + " USD");
