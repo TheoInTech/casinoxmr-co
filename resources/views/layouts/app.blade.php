@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+
         <link href="{{ mix('/css/app.min.css') }}" rel="stylesheet">
 
         <title>@yield('title', 'CasinoXMR | Cryptocurrency Wallet and Miner | 24/7 Crypto and Blockchain News')</title>
