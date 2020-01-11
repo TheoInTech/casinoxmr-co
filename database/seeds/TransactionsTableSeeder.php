@@ -17,11 +17,11 @@ class TransactionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $client = new Client();
-        $monero = json_decode($client->request('GET', 'https://chainradar.com/api/v1/mro/status')->getBody()->getContents());
+        $client = new Client(['verify' => false]);
+        $monero = json_decode($client->request('GET', 'http://moneroblocks.info/api/get_stats')->getBody()->getContents());
 
         $difficulty = $monero->difficulty;
-        $reward = $monero->baseReward / 1000000000000;
+        $reward = $monero->last_reward / 1000000000000;
 
         $hashes = array(
             '100000000',

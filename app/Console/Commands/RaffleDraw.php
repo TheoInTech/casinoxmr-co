@@ -49,7 +49,7 @@ class RaffleDraw extends Command
      */
     public function handle()
     {
-        $client = new Client();
+        $client = new Client(['verify' => false]);
         $exchange = json_decode(
             $client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents()
         );

@@ -19,7 +19,7 @@ trait Getters {
     protected $next;
 
     public function __construct() {
-        $client = new Client();
+        $client = new Client(['verify' => false]);
         $this->exchange = json_decode($client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/monero')->getBody()->getContents());
         // $this->exchange[0] = json_decode(json_encode(array(
         //     'price_usd' => 231.00
@@ -97,8 +97,7 @@ trait Getters {
 
         $usd = ($totalPotSize * 0.000001) * $this->exchange[0]->price_usd;
         $xmr = ($totalPotSize * 0.000001);
-
-        $pot = Pot::where('raffle_date', $this->next)->first();
+        $pot = Pot::whereDate('raffle_date', $this->next)->first();
         $pot->raffle_date = Carbon::parse($pot->raffle_date)->format('Y-m-d\TH:i:s.uP');
         return json_encode([
             'USDEqual'    => $this->exchange[0]->price_usd,
@@ -173,7 +172,7 @@ trait Getters {
     }
 
     public function getNextRaffle() {
-        $pot = Pot::where('raffle_date', $this->next)->first();
+        $pot = Pot::whereDate('raffle_date', $this->next)->first();
         $pot->raffle_date = Carbon::parse($pot->raffle_date)->format('Y-m-d\TH:i:s.uP');
 
         return $pot->raffle_date;
@@ -190,7 +189,7 @@ trait Getters {
         //     $latest = Carbon::parse('last Monday 12:00:00 am');
         // }
 
-        $pot = Pot::where('raffle_date', $latest)->where('is_drawn', 1)->first();
+        $pot = Pot::whereDate('raffle_date', $latest)->where('is_drawn', 1)->first();
         
         if ( $pot && $pot->users ) {
             $winners = $pot->users;

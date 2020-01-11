@@ -87,8 +87,8 @@ class DashboardController extends Controller
         }
 
         // Get monero status and data
-        $client = new Client();
-        $monero = json_decode($client->request('GET', 'https://chainradar.com/api/v1/mro/status')->getBody()->getContents());
+        $client = new Client(['verify' => false]);
+        $monero = json_decode($client->request('GET', 'http://moneroblocks.info/api/get_stats')->getBody()->getContents());
         $difficulty = $monero->difficulty;
         $reward = $monero->baseReward / 1000000000000;
 
